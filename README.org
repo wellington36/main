@@ -1,0 +1,48 @@
+#+Title: EMAp Introdução à Computação 2020.1
+
+* Tópico 1: Linux
+
+- https://ubuntu.com/tutorials/command-line-for-beginners
+- https://www.ibm.com/developerworks/linux/tutorials/l-gnutex/index.html
+
+Falamos da motivação para saber usar a 'linha de comando'.
+
+Vimos em sala: ls, pwd, cd, tr, less, which, rm, mv, cp, wc,
+cat. Falamos de paths absolutos vs relativos. Falamos de nomes de
+arquivos de padrões (com * e ?).
+
+Como ter o Linux?
+
+- https://www.virtualbox.org
+- dual boot 
+- https://www.docker.com
+- TIC, maquinas virtuais (esperando)
+
+* Tópico 2: LaTeX
+
+Editores:
+
+Please! Esqueçam o NOTEPAD!!
+
+- https://www.gnu.org/software/emacs/
+ - [[https://www6.software.ibm.com/developerworks/education/l-emacs/l-emacs-ltr.pdf][tutorial IBM]]
+- https://www.vim.org
+- ...
+
+Instalando o LaTeX:
+
+- http://www.tug.org/mactex/ (Mac)
+- Linux (apt-get)
+- https://miktex.org (Windows?)
+
+Online http://overleaf.com
+
+Livro:
+
+- http://tug.ctan.org/info/lshort/
+- beamer para slides
+
+Dicas:
+
+- http://detexify.kirelabs.org/classify.html
+
