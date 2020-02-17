@@ -1,0 +1,102 @@
+\documentclass[a4page,12pt]{article}
+
+\usepackage{url,tabularx}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{amsmath}
+
+\begin{document}
+
+\title{Introdução à Computação}
+\author{Alexandre Rademaker}
+\date{}
+\maketitle
+
+\begin{abstract}
+  meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo meu resumo.
+\end{abstract}
+
+\section{Introdução}
+\label{sec:intro}
+
+\LaTeX{} is widely used in academia     for the communication and
+publication of scientific documents in many fields, including
+mathematics, statistics, computer science, engineering, chemistry,
+physics, economics, linguistics,~\footnote{Assunto relevante.}
+quantitative psychology, philosophy, and political science.
+
+It also has a prominent role in the preparation and publication of books and articles that contain complex multilingual materials, such as Sanskrit and Greek. LaTeX uses the TeX typesetting program for formatting its output, and is itself written in the \TeX{} macro language.
+
+\begin{table}[htbp]
+  \begin{center}
+  \begin{tabularx}{10cm}{cX} \hline
+         Nome & telefone telefone telefone telefone telefone telefone telefone telefone  \\ \hline
+    Alexandre & 1234 \\
+       Danilo & 3456 \\ \hline
+  \end{tabularx}
+  \caption{Esta é minha tabela}\label{tab:o1}
+  \end{center}
+\end{table}
+
+
+Veja \url{https://en.wikipedia.org/wiki/LaTeX} de onde saiu este texto. Veja Tabela~\ref{tab:o}.
+
+\begin{table}[htbp]
+  \begin{center}
+  \begin{tabular}{cr} \hline
+         Nome & telefone \\ \hline
+    Alexandre & 1234 \\
+       Danilo & 3456 \\ \hline
+  \end{tabular}
+  \caption{Esta é minha tabela}\label{tab:ow}
+  \end{center}
+\end{table}
+
+
+\begin{enumerate}
+\item entrada 1
+\item entrada 2
+\end{enumerate}
+
+
+\section{Linux é legal}
+
+Vimos na seção~\ref{sec:intro} que o \ldots.
+
+If you exported your graphics as an EPS vector graphics, you have to convert it to PDF format prior to using it. There is a epstopdf command line tool that helps with this task. Note that it may be sensible to export EPS eventhough your software can export PDF too, as PDFs often are full page and will this get very small when imported into a document. EPS on the other hand come with a bounding box showing the extent of the actual graphics.
+
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[angle=45,width=.5\textwidth]{teste.png}
+    \caption{minha figura da Internet}\label{fig:teste}
+  \end{center}
+\end{figure}
+
+If you exported your graphics as an EPS vector graphics, you have to convert it to PDF format prior to using it. There is a epstopdf command line tool that helps with this task. Note that it may be sensible to export EPS eventhough your software can export PDF too, as PDFs often are full page and will this get very small when imported into a document. EPS on the other hand come with a bounding box showing the extent of the actual graphics na figura~\ref{fig:teste}.
+
+\begin{wrapfigure}{r}{0.5\textwidth}
+  \begin{center}
+    \includegraphics[angle=45,width=.5\textwidth]{teste.png}
+    \caption{minha figura da Internet}\label{fig:w}
+  \end{center}
+\end{wrapfigure}
+
+If you exported your graphics as an EPS vector graphics, you have to convert it to PDF format prior to using it. There is a epstopdf command line tool that helps with this task. Note that it may be sensible to export EPS eventhough your software can export PDF too, as PDFs often are full page and will this get very small when imported into a document. EPS on the other hand come with a bounding box showing the extent of the actual graphics na $a_{\delta}^{2a} + b^2 = c^2 \text{alex}$.
+
+If you exported your graphics $\delta$ as an EPS e o b vector graphics, you have to convert it to PDF format prior to using it. There is a epstopdf command line tool that helps with this task. Note that it may be sensible to export EPS eventhough your software can export PDF too, as PDFs often are full page and will this get very small when imported into a document. EPS on the other hand come with a bounding box showing the extent of the actual graphics na.
+
+\begin{equation}\label{eq:bla}
+  a^2 + b^2 = c^2
+\end{equation}
+
+Na equação~\ref{eq:bla}, If you exported your graphics as an EPS vector graphics, you have to convert it to PDF format prior to using it. There is a epstopdf command line tool that helps with this task. Note that it may be sensible to export EPS eventhough your software can export PDF too, as PDFs often are full page and will this get very small when imported into a document. EPS on the other hand come with a bounding box showing the extent of the actual graphics na figura~\ref{fig:w}.
+
+
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
