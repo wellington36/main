@@ -46,3 +46,25 @@ Dicas:
 
 - http://detexify.kirelabs.org/classify.html
 
+* Tópico 3: Git/GitHub
+
+- Perguntas no http://stackoverflow.com
+- https://git-scm.com/book/en/v2
+- https://help.github.com/en
+
+Comandos básicos:
+
+- git add
+- git commit
+- git diff
+- git push
+- git clone
+- git pull
+
+Conceitos básicos:
+
+- branch
+- commit
+- pull request
+- fork, push, close, pull
+

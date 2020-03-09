@@ -1,5 +1,0 @@
-#+Title: Aula 2
-
-Para mostrar o Git e GitHub.
-
-
