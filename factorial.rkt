@@ -8,15 +8,17 @@
       (* n (factorial1 (- n 1)))))
 
 
-(define (factorial2 n)
-  (define (fact-iter product counter)
+(define (fact-iter n product counter)
     (if (> counter n)
-      product
-      (fact-iter (* counter product)
-                 (+ counter 1))))
-  (fact-iter 1 1))
+        product
+        (fact-iter n
+                   (* counter product)
+                   (+ counter 1))))
 
-(trace factorial1 factorial2)
+(define (factorial2 n)
+  (fact-iter n 1 1))
+
+(trace factorial1 fact-iter)
 
 
 
