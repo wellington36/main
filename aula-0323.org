@@ -1,0 +1,98 @@
+
+* revisão
+
+Exercise 1.11 A function f is defined by the rule that f(n) = n if n<3
+and f(n) = f(n - 1) + 2f(n - 2) + 3f(n - 3) if n> 3. Write a procedure
+that computes f by means of a recursive process. Write a procedure
+that computes f by means of an iterative process.
+
+See ex-1.11.rkt
+
+Exercise 1.15.  The sine of an angle (specified in radians) can be
+computed by making use of the approximation sin x = x if x is
+sufficiently small, and the trigonometric identity
+
+See https://codology.net/post/sicp-solution-exercise-1-15/
+
+Exercise 1.16.  Design a procedure that evolves an iterative
+exponentiation process that uses successive squaring and uses a
+logarithmic number of steps, as does fast-expt.
+
+See https://codology.net/post/sicp-solution-exercise-1-16/
+
+Exercise 1.17 
+
+See https://codology.net/post/sicp-solution-exercise-1-17/
+
+* aula
+
+1. Procedimentos são abstrações que descrevem operações compostas!
+
+#+BEGIN_SRC racket
+(define (cube x) (* x x x))
+#+END_SRC
+
+2. Often the same programming pattern will be used with a number of
+   different procedures. To express such patterns as concepts, we will
+   need to construct procedures that can accept procedures as
+   arguments or return procedures as values.
+
+3. Procedures that manipulate procedures are called higher-order
+   procedures.
+
+4. Procedures as arguments 
+
+
+#+BEGIN_SRC racket :results output
+#lang racket
+
+(define (sum term a next b)
+  (if (> a b)
+      0
+      (+ (term a)
+         (sum term (next a) next b))))
+
+(define (identity n) n)
+(define (inc n) (+ n 1))
+
+(define (sum-integers a b)
+  (sum identity a inc b))
+
+(define (cube n) (* n n n))
+(define (sum-cubes a b)
+  (sum cube a inc b))
+
+
+(define (pi-sum a b)
+  (define (pi-term a)
+    (/ 1.0 (* a (+ a 2))))
+  (define (pi-next a)
+     (+ a 4)) 
+  (sum pi-term a pi-next b))
+
+
+(define (integral f a b dx)
+  (define (add-dx x) (+ x dx))
+  (* (sum f (+ a (/ dx 2.0)) add-dx b)
+     dx))
+
+(integral cube 0 1 0.01)
+#+END_SRC
+
+
+Exercise 1.32
+
+5. Constructing Procedures Using Lambda
+
+6. Using let to create local variables
+
+let ~ lambda
+
+Exercise 1.34
+
+7. Finding roots of equations by the half-interval method
+
+8. Finding fixed points of functions
+
+9. Procedures as Returned Values
+
