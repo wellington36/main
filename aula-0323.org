@@ -28,7 +28,7 @@ See https://codology.net/post/sicp-solution-exercise-1-17/
 
 1. Procedimentos são abstrações que descrevem operações compostas!
 
-#+BEGIN_SRC racket
+#+BEGIN_SRC racket :results output
 (define (cube x) (* x x x))
 #+END_SRC
 

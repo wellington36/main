@@ -1,0 +1,36 @@
+
+| ALUNO                              |    CÓDIGO |  Q1 |    L1 |
+|------------------------------------+-----------+-----+-------|
+| Ademir Tomaz Filho                 | 201704018 | 0,5 |     1 |
+| André Ribeiro Guimarães            | 201704031 | 0,5 |     1 |
+| Anne Beatriz Cardoso de Sousa      | 201704029 | 0,5 |     1 |
+| Breno Russo Guedes de Souza Melo   | 201704017 | 0,5 |  0,75 |
+| Caio de Lanna Calixto              | 201704021 |   0 |  0,75 |
+| Caio Fernandes Lins Peixoto        | 201704005 |   1 |     1 |
+| Daniel Csillag                     | 201704028 |   1 |     1 |
+| Emanuel Bissiatti de Almeida       | 201704025 | 0,5 |     1 |
+| Erick Silvestre Lima de Brito      | 201704013 |   1 |     1 |
+| Erlon Kelvim Vieira Gomes          | 201704020 |   0 |     1 |
+| Fernanda Luísa Silva Gomes         | 201704033 |   1 |  0,75 |
+| Gilberto Gonçalves Gomes Filho     | 201704014 |   1 |     1 |
+| João Henrique Oliveira Fontes      | 201704001 | 0,5 |     0 |
+| João Lucas Duim                    | 201704002 |   1 |     1 |
+| Julia Ramos Alves                  | 201704007 |   1 |     1 |
+| Juliana Carvalho de Souza          | 201704019 |   1 |     1 |
+| Juliane de Sá Martins              | 201704008 |   1 |     1 |
+| Lorenzzo Tavares Lacerda           | 201704038 |   0 |     1 |
+| Luis Antonio Granja Teixeira       | 201704039 |   1 |     1 |
+| Marcelo Faria Gonçalves Silva      | 201704011 | 0,5 |     1 |
+| Michelli Cristini Lopes de Almeida | 201704034 |   1 |     1 |
+| Nayra Kethuly Cardoso de Oliveira  | 201704026 |   0 | 0,125 |
+| Patrick Saul Costa do Amaral       | 201704036 |   1 |     1 |
+| Paulo Victor dos Santos Araújo     | 201704027 |   0 |     0 |
+| Rafael Gomes Portácio de Souza     | 201704030 |   1 |  0,75 |
+| Raphael Felberg Levy               | 201704016 |   1 |  0,25 |
+| Sávio Vinícius Costa do Amaral     | 201704032 |   1 |     1 |
+| Tiago Paes Lameiro                 | 201704004 |   0 |     1 |
+| Tomás Pegado Lenzi                 | 201704037 | 0,5 |  0,75 |
+| Tulio Coutinho Koneçny             | 201704012 |   1 |     1 |
+| Vicente Forte de Souza Costa       | 201704010 |   0 |     0 |
+| Vinícius Mitsuo Furukava           | 201704024 | 0,5 |     1 |
+| Wellington José Leite da Silva     | 201704022 | 0,5 |     1 |

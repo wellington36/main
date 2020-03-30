@@ -1,0 +1,16 @@
+
+* revisão
+
+Seções 2.1.1 e 2.2.2
+
+* aula
+
+1. comentários sobre dúvidas, maior participação, preenchimento
+   cadastro (com fotos e nomes) no zoom, monitoria.
+
+2. opções de representações de dados: caso racional, caso cons.
+
+3. exercícios: 2.1 e 2.2
+
+4. invariantes sobre dados, seção 2.1.3.
+
