@@ -1,9 +1,12 @@
 #lang racket
 
 (define (last-pair l)
-  (if (empty? (cdr l))
-      l
-      (last-pair (cdr l))))
+  (cond ((empty? l)
+         l)
+        ((empty? (cdr l))
+         l)
+        (else
+         (last-pair (cdr l)))))
 
 (last-pair (list 23 72 149 34))
-(last-pair '())
+(last-pair '()) 
