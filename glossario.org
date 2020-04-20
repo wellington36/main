@@ -1,0 +1,1076 @@
+
+* Predicate (predicado)
+
+Um predicado é qualquer expressão que quando avaliada retorna um
+boolean (desde que todos os termos envolvidos estejam
+definidos/especificados), ou seja, seu valor lógico pode ser avaliado
+como verdadeiro ou falso, apenas. Por exemplo, (= 1 2) e (> 5 2) são
+predicados.
+
+# um predicado seria o simbolo, que quando aplicado a argumentos forma
+# uma expressão com valor boolean.
+
+* Formal parameters (parâmetros formais)
+
+Um parâmetro formal está subordinado a um procedimento da mesma forma
+que uma variável muda em relação a uma função. Dessa forma, o
+parâmetro formal em si não é avaliado, sendo utilizado apenas para
+definir como um procedimento opera. Por exemplo, 'x' é o parâmetro
+formal na definição do procedimento 'f': (define (f x) (+ x 1)). Vale
+ressaltar que um mesmo procedimento pode ser definido para ser operado
+sobre vários parâmetros formais e que um mesmo símbolo pode ser
+atribuído como parâmetro formal para vários procedimentos sem que haja
+conflito entre eles.
+
+Fonte: SICP.
+
+# subordinado a um procedimento? existem definições mais simples na
+# web.
+
+* Value (valor)
+
+Valor é o tipo mais simples de expressão, que, ao avaliado, será
+associado a si mesmo. Existem vários tipos de valores, como os
+numéricos, os booleanos, associados à ideia de "falso ou verdadeiro",
+ou o valor nulo, que corresponde à ideia de "vazio". Um exemplo de
+valor numérico é a sequência de dígitos 314, que, ao avaliada, será
+associada ao próprio número 314, em contraposição à expressão (+ 1
+313). Em outras palavras, valores são expressões que não podem ser
+avaliadas mais profundamente.
+
+Fonte: https://cs.wellesley.edu/~cs251/f15/notes/racket.html#expressions-values-bindings-and-environments
+
+# avaliadas mais profundamnete não é a melhor tradução.
+
+* Variável (variable)
+
+Variável é um nome que será associado a um valor. A avaliação de uma
+variável buscará um valor previamente associado a seu nome
+identificador. A associação pode ser feita pelo uso de define, let ou
+outros meios, e a busca pelo valor acontecerá no ambiente em que a
+avaliação se insere. Por exemplo, no corpo de uma função, na expressão
+(+ x 1), a avaliação de x pode se referir tanto a uma associação feita
+internamente à definição da função quanto externamente, em um ambiente
+que englobe a definição da função. Quando a associação de um valor a
+certa variável é válida para o ambiente global, ela é chamada variável
+livre (free variable), enquanto, se for válida para um ambiente local,
+é chamada variável ligada (bound variable).
+
+Fontes: 
+- SICP
+- https://cs.wellesley.edu/~cs251/f15/notes/racket.html#expressions-values-bindings-and-environments
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Variables.html
+
+# simbolos podem ser ligados (com valor associado) ou livres (sem
+# valor associado). Isto não está relacionado ao escopo local ou
+# global.
+
+* Combinations (Combinações)
+
+O meio da combinação consiste em uma expressão que aplicará
+procedimento para um conjunto de argumentos, a fim de retornar um novo
+valor, uma nova lista, entre outras coisas.
+
+Por exemplo: (+ 3 (* 5 6) 8 2) , estamos aplicando uma combinação com
+os números 3, 5, 6, 8, 2 e com os operadores + e * , cuja máquina
+retorna um novo número, na qual em questão, o 43.
+
+Fonte: https://youtu.be/FIUJd_ZFmGo
+
+# má escolha. Mas combinação no vídeo tem haver com a ideia de que
+# para descrever procedimentos complexos, partimos de procedimentos
+# mais simples e de forma de combinar estes procedimentos. No seu
+# exemplo, vc estaria combinando o procedimento associado ao simbolo
+# da multiplicação com o procedimento associado ao simbolo da soma. E
+# a regra de avaliação de expressões diz como os processos descritos
+# por estes procedimentos serão executados.
+
+* Anonymous functions (funções anônimas)
+
+Funções anônimas são procedimentos que não foram atrelados a algum
+nome específico. Em Racket, funções anônimas são criadas usando a
+forma especial "lambda", que possui a seguinte sintaxe:
+
+(lambda (<parâmetros formais>) <corpo>)
+
+Seu valor é um procedimento, então ela pode ser usada na posição de
+procedimento em combinações. Ao avaliar uma combinação desse tipo, o
+interpretador avalia o corpo da forma "lambda" substituindo os
+parâmetros formais pelos argumentos fornecidos na combinação (da mesma
+forma que é feita com funções criadas usando "define").
+
+Exemplo:
+
+A combinação:
+
+( ( lambda ( x ) ( * x x ) ) 4 )
+
+tem 16 como valor.
+
+Fontes: 
+- SICP subseção 1.3.2
+- https://docs.racket-lang.org/plait/lambda-tutorial.html
+
+# uso desnecessário de exemplos. Definir não é dar exemplo. O conceito
+# de função anônima é uma coisa, como fazer elas em Racket é outra.
+
+* Boolean (Booleano)
+
+Booleanos são o resultado de expressões condicionais que começam com
+um predicado, e que resultam em um valor verdadeiro ou falso (#t ou
+#f). Expressões booleanas são escritas através da colocação do
+predicado, seguido de uma interrogação, depois a expressão consequente
+e por fim a expressão alternativa. Se a expressão consequente
+concordar com o predicado, ela deve devolver #t. Caso contrário, a
+máquina irá analisar se a expressão alternativa será válida para o
+caso dado. Caso isso ocorra, ela irá devolver #f.
+
+A expressão de um booleano é dada por algo como "if bool ? first :
+second", e para operar com valores Boolean, a família Lisp possui três
+agentes principais: and, or e not.
+
+Fontes: 
+- SICP-JavaScript Adaptation subseção 1.1.6: https://sicp.comp.nus.edu.sg/sicpjs.pdf
+- https://www.lvguowei.me/post/sicp-goodness-data-2/
+- https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node75.html
+
+# coordenar com quem definiu acima `predicado`! Boolean é um tipo que
+# tem dois valores t e f. o predicado nao precisa ser seguido por
+# interrogacao, é uma boa pratica que o nome dado a um predicado
+# termine com interrogação. o que é concordar com o predicado? segundo
+# paragrafo nao entendi.
+
+* Map (mapear)
+
+O map é um procedimento de ordem maior (higher-order procedure), que
+recebe como seus argumentos um procedimento de um único argumento e
+listas, devolvendo como resultado uma lista dos resultados da
+aplicação desse procedimento do argumento a cada item da(s) lista(s)
+dada(s), possibilitando um maior nível de abstração para se trabalhar
+com listas.
+
+É possível por exemplo aplicar um procedimento de soma a mais de uma
+lista, fazendo com que o map devolva em uma lista a soma de todos os
+primeiros elementos das listas anteriores como primeiro elemento, a
+soma dos segundos como o segundo e assim por diante. (ex.: (map +
+(list 1 2 3) (list 40 50 60) (list 700 800 900))=(741 852 963))
+
+O map também pode receber como um argumento um lambda, e as listas
+consequentes serão os parâmetros do procedimento de lambda (ex.: (map
+(lambda (x y) (+ x (* 2 y))).  (list 1 2 3) (list 4 5 6))-> (9 12 15))
+
+Fonte: SICP, seção 2.2.1 
+
+# primeira frase confusa. O map é uma função que recebe como primeiro
+# argumento uma função e como demais argumentos listas de
+# valores.... remova exemplos. É uma má escolha para item de um
+# glossário. Imagine que agora poderiamos tentar colocar como entrada
+# no glossario TODAS as funções primitivas da linguagem... faz
+# sentido?
+
+* Abstractions (abstrações)
+
+Abstração é uma técnica utilizada na identificação de padrões e
+programas similares, na qual escrevemos alguns padrões de uma maneira
+que possa ser utilizada de várias formas diferentes. Com isso não
+temos a necessidade de ficar reescrevendo os códigos toda vez que
+voltarmos a utilizar um programa similiar a um já feito antes.
+
+Por exemplo: (define (sum-of a b)
+(if (> a b) 0
+(+ a (sum-of (+ a 1) b))))
+
+Neste exemplo, estamos definindo uma soma de um certo número até outro
+certo número, com estes dois número sendo inteiros, desta forma,
+podemos ficar reutilizando essa definição várias vezes sem precisar
+ficar refazendo o código toda vez que esse por sua vez for necessário.
+
+
+# tire o exemplo, definir não é dar exemplo. abstração não é técnica
+# para identificar padrões. Nem, é técnica para identificar programas
+# similares. abstração é quando ao definir um procedimento complexo,
+# possivelmente combinação de outros procedimentos, associamos a ele
+# um nome fazendo dele um novo primitivo para outros procedimentos
+# mais complexos.
+
+
+* Order of Growth ( Ordem de Crescimento)
+
+A ordem de crescimento fornece uma indicação útil de como podemos
+esperar que o comportamento de um processo mude à medida que mudamos o
+tamanho do problema, isso é muito útil porque os processos podem
+diferir consideravelmente nas taxas em que eles consomem recursos
+computacionais.  Ainda podemos analisar a complexidade de tempo de
+execusão de um algoritmo, a seguir apresentaremos as ordens de
+crescimento começando pelo algoritmo de execusão mais rápido :
+
+Θ(1) {constante}
+Θ(log log n)
+Θ(log n) {logarítmico}
+Θ(n) {linear}
+Θ(n log n)
+Θ(n^2) : {quadrático}
+Θ(n^k) : {polinomial}
+Θ(k^n), O (n!), O (n^n) {exponencial}
+
+Fonte: http://www.inf.ufrgs.br/~prestes/Courses/Complexity/aula1.pdf
+Fonte: SICP, seção 1.2.3 https://sicp.comp.nus.edu.sg/sicpjs.pdf
+
+# util é um adj desnecessario. o comportamento do procedimento muda
+# conforme seus argumentos. problema é outra coisa, um problema pode
+# ter sua solução descrita por um algoritmo. A complexidade de um
+# algoritmo pode ser ESTIMADA em função do tamanho de suas
+# entradas. retirar exemplos, definições não são exemplos. a primeira
+# referencia é instável, o link pode sair do ar amanhã...
+
+
+* Arguments (argumentos)
+
+Variáveis, utilizadas pelas funções como valores para os operadores.
+
+Exemplos:
+((f x) (* x x x))
+((g x y) (* x (+ y 1)))
+
+A função f espera um argumento para realizar a operação, enquanto a
+função g espera dos argumentos.
+
+# vide comentário anterior, já foi definido. tire exemplos. nao colou
+# referencia.
+
+
+* Applicative order (ordem aplicativa)
+
+A ordem aplicativa consiste em avaliar primeiro o operador e os
+operandos, e, em seguida, aplicar o operador aos operandos, ou seja,
+na ordem aplicativa, os argumentos da função são avaliados antes que a
+função seja executada. Exemplo:
+
+(define (suqare x)
+(* x x))
+
+(define a (+ 4 2))
+
+(square a)
+
+(square 6)
+<36
+36
+
+Fonte: SICP
+
+
+# tire exemplos.
+
+
+* First-class status (status de primeira classe)
+
+Linguagens de programação, em geral, tendem a impor algumas restrições
+à forma como determinados elementos podem ser manipulados. Em Racket
+(assim como em outras implementações de Lisp), procedimentos são uma
+classe de elementos que goza de pouquíssimas restrições. Essa
+flexibilidade é expressada dizendo que eles possuem status de primeira
+classe. Na prática, isso quer dizer que procedimentos:
+
+-> Podem ser atrelados a nomes
+-> Podem ser passados para outros procedimentos como argumentos
+-> Podem ser devolvidos como valores de procedimentos
+-> Podem estar contidos em estruturas de dados, como listas ou pares, por exemplo.
+
+Essa decisão de implementação confere ainda mais poder às abstrações
+que podem ser realizadas por um programador.
+
+Fonte: SICP, subseção 1.3.4.
+
+# ok, mas foi pura tradução.
+
+
+* Local names (Nomes locais)
+
+Local names são nomes dados aos parâmetros de um procedimento
+internamente ao corpo deste procedimento. Além disso, independente da
+escolha do autor do procedimento pelos nomes dos parâmetros, o
+procedimento não será alterado. Vale também ressaltar que esses nomes
+são válidos apenas dentro do procedimento am questão, sendo assim,
+parâmetros com mesmos nomes em procedimentos distintos não se
+interferirão, sendo avaliados de forma independente em cada
+procedimento.
+
+Fonte: SICP, subseção 1.1.8
+
+# os nomes podem ser alterados se forem alterados no parametro e no
+# corpo do procedimento, senão haverá sim alteração no
+# funcionamento. local names não são apenas parametros. Um let
+# introduz nomes locais ao seu escopo.
+
+* Expressions (Expressões)
+
+Expressões são combinações de valores, variáveis, operadores e
+chamadas de função que serão avaliadas, calculadas e em seguida
+retornarão um valor.
+
+Fonte: https://www.techopedia.com/definition/1808/expression-computer-science
+
+# ok
+
+* Procedure (Procedimento)
+
+É uma série de ações mecânicas para manipular dados, usado comumente
+para descrever processos. Em LISP, pode ser visto também como um tipo
+de dado.
+
+
+# fonte? 'ação mecanica'? procurar melhor definição.
+
+* Data Type (Tipo de dado)
+
+É a natureza do dado em questão. É responsável por ditar que tipos de
+procedimentos podem ser realizados com o dado.
+
+# procurar melhor definição. O que seria natureza? podemos dizer que
+# valores são organizados em conjuntos denominados tipos. Termos como
+# 'ditar' são bem vagos.
+
+* Cons (construtor)
+
+Cons é um procedimento primitivo que recebe dois argumentos e retorna
+um objeto composto de dados que possui os dois argumentos como partes,
+ou seja, cons combina os dois argumentos em uma estrutura única. Além
+do cons poder receber como argumentos números, booleanos, strings e
+pares, o segundo argumento pode ser uma lista. Entretando, caso o
+segundo argumento seja uma lista, a representação final não possui um
+ponto separando os argumentos, como nos demais casos.
+
+Exemplo:
+(cons 1 2)
+'(1 . 2)
+
+(cons "laranja" #t)
+'("laranja" . #t)
+
+(cons (cons 1 2) (cons 3 4))
+'((1 . 2) 3 . 4)
+
+(cons 1 (cons 2 (cons 3 empty)))
+'(1 2 3)
+
+Fonte: SICP
+
+# trocar. Vide comentário acima sobre `map`.
+
+
+* string (Cadeia de Caracteres)
+
+Uma string é uma sequência definida de caracteres, expressa entre
+aspas duplas, geralmente utilizada para representar palavras, frases
+ou textos de um programa.
+
+Quando a string é gerada pelo default reader e internalizada no modo
+read-syntax, dizemos que essa é imutável, já que o seu conteúdo não
+pode ser modificado sem criar uma nova string, com outras
+referências. Em contrapartida, a string é mutável caso seja gerada por
+um procedimento - por exemplo, pelo operador primitivo "make-string".
+
+Fonte: https://docs.racket-lang.org/reference/strings.html?q=string#%28def._%28%28quote._~23~25kernel%29._string-set%21%29%29
+
+# no link da fonte, tudo depois do ? pode ser removido. veja definição
+# acima de tipo de dados, coordenar com autor. String é um tipo de
+# dados, sequencias de caracteres entre aspas são valores do tipo
+# 'string'. Strings existem em várias linguagens, definir o conceito e
+# não detalhes de como elas são criadas ou manipuladas em Racket.
+ 
+* Syntactic Sugar (Açúcar Sintático)
+
+Um açúcar sintático é uma sintaxe dentro da linguagem de programação
+que tem por finalidade tornar suas construções mais fáceis de serem
+lidas e expressas. Atente-se, contudo, ao fato de que um açúcar
+sintático não altera a expressividade nem a funcionalidade de uma
+linguagem. Por esse motivo, programadores em LISP evitam fazer uso em
+programas longos e complexos de formas sintáticas especiais que
+retirem a uniformidade do código.
+
+Fonte: SICP, seção 1.1.3., nota de rodapé 11.
+
+# lidas e expressas? a tradução para a ultima sentença parece
+# estranha. 
+
+* Commit (cometer)
+
+Trata-se basicamente de um comando do sistema Git para se fazer um
+registro das alterações feitas nos arquivos de determinado repositório
+baixado (podendo um commit inclusive incluir novos arquivos), tais
+alterações poderão posteriormente por upload atualizar um repositório
+no sistema Git. Sendo esse comando de prático uso para fazer registros
+das mudanças feitas no projeto uma vez que o Git tem ferramentas que
+permitem analisar as modificações ocorridas entre um commit e outro.
+
+Graças à praticidade do sistema Git é possível adicionar múltiplos
+commits de pessoas diferentes num único projeto fazendo as múltiplas
+mudanças pontuais que cada um realizou.
+
+Fonte: https://git-scm.com/docs/git-commit
+
+# glossario não é lugar para lista de comandos. commit é um comando
+# git, se aceitarmos este como entrada, teriamos que enumerar todos os
+# demais comandos git. Isto se transformaria em um manual git e não em
+# um glossário. Vide comentários para `map` e `cons`
+
+
+* If (Se)
+
+Trata-se de um special form, que serve como condicional quando se há
+precisamente dois casos em análise. Ou seja, usamos o if quando
+queremos avaliar um argumento e dar opção de consequência e
+alternativa para o resultado da avaliação.  Para avaliar uma expressão
+if o interpretador faz o seguinte:
+
+Avalia o Predicado (expressão cujo valor é interpretado como
+verdadeiro ou falso)
+
+- Em caso de ser verdadeiro, interpreta a consequência e retorna o seu valor.
+- Em caso de ser falso, interpreta a alternativa e retorna o seu valor.
+
+Por fim, a forma geral de uma expressão if é: (if (predicado)
+(consequência) alternativa ).
+
+Exemplo: Defina um procedimento que retorna o valor absoluto de um número
+(define (abs x)
+(if (< x 0)
+(- x)
+x))
+
+Fonte: SICP, seção 1.1.6
+
+# vide cokmentário acima
+
+* Tree-recursive (árvore recursiva)
+
+É uma expressão usada quando o calculo de um valor de uma função
+depende de valores anteriores da função, por exemplo, podemos definir
+f(1)=1, f(2)=2 e f(n)=f(n-1).f(n-2) , nesse caso, para calcular f(n)
+precisaria de f(n-1) e f(n-2), que por sua vez precisaria calcular
+f(n-4), f(n-3) e f(n-2) e assim sucessivamente de forma que o número
+de etapas cresce exponencialmente de acordo com a construção do f(n).
+
+Fonte: SICP, 1.2.2
+
+# uma recursão linear também dependerá de valores anteriores. O
+# processo descrito pela função se desenvolve como uma árvore quando a
+# avaliação em um determinado ponto depende do retorno da avaliação do
+# mesmo procedimento duas ou mais vezes...
+
+
+* Tree accumulation (acúmulo de árvores)
+
+Expressão usada quando apartir de dados menores constroi-se nós da
+árvore até um valor mais geral, por exemplo, se quisermos saber a
+quantidade de pessoas no Brasil dado que conhecemos a quantidade de
+pessoas de todas as cidades, com essas informações podemos descobrir o
+número de pessoas nos estados depois nas regiões e conseguentemente no
+Brasil, formando uma árvore de dados gerada a partir dos mais
+primitivos.
+
+Fonte: https://stackoverflow.com/questions/35291806/how-to-write-tree-map-function-using-apply-in-scheme
+
+# termo que não vimos em sala e não usado de forma ampla. melhor
+# procurar outra coisa.
+
+* Special form (forma especial)
+
+Special form é uma função primitiva na qual nem todos os seus
+argumentos são avaliados. Cada special form tem sua própria regra de
+avaliação. Alguns exemplos são: define, cond, if, lambda, let entre
+outros.
+
+# alguns exemplos em racket ... a primeira frase esta errada, a
+# segunda está certa.
+
+* Directory (diretório)
+
+Diretório é uma estrutura usada para organizar arquivos em um
+computador ou um arquivo que contém referência a outros arquivos. Essa
+estrutura de diretórios se parece com uma árvore.
+
+* Number (Número)
+
+Um número em Racket é um tipo de dado embutido (built-in),
+classificado como complexo. Um número pode ser:
+
+exato (inteiro, racional, ou complexo com partes real e imaginária
+(não nula) exatas), expresso como inteiro ou fração; ou
+
+inexato (ponto flutuante IEEE - ex. 4.0 -, ou complexo com parte
+imaginária inexata) impresso com um ponto decimal ou especificador de
+expoente. Cálculos com números inexatos produzem resultados inexatos
+(exceto comparações).
+
+Um número exato pode ser arbitrariamente grande ou pequeno, sendo
+limitado apenas à quantidade de memória disponível e, em geral,
+operações com inteiros menores são as mais rápidas. Os inteiros,
+racionais, reais e complexos são definidos da maneira usual, sendo
+utilizadas procedures para reconhecê-los.
+
+Fonte:
+- Racket Guide
+- Racket Reference
+
+# vc usa duas vezes o termo complexo. pode causar confusao. esclarecer.
+
+
+* Quotation (citação)
+
+A quotation é um recurso que possibilita o armazenamento e exibição de
+um código em sua forma literal. As formas de se fazer uma quotation
+são a partir do comando quote ou da simples adição de um apóstrofo
+antes do elemento que se deseja "quotizar"(podendo o elemento ser de
+praticamente qualquer formato desde que possa ser interpretado como um
+elemento único). Um elemento “quotizado” que contenha outros elementos
+dentro dele será uma lista desses elementos “quotizados”.
+
+Uma quotation apesar de manter o conteúdo do código, não
+necessariamente mantém sua representação visual idêntica (o que fica
+evidente no último exemplo citado, onde se usa uma notação
+dotted-tail) e uma quotation de um elemento que comece por #< não pode
+ser feita.
+
+Exemplos:
+
+(define a 30)
+(quote a)
+'a
+'(* (+ 1 7) 4)
+'(* (+ 1 7) 4)
+(car '(* (+ 1 7) 4))
+'*
+(car '((+ 1 7) 4))
+'(+ 1 7)
+(quote (1 2 . (3 5)))
+'(1 2 3 5)
+
+fontes: 
+- https://docs.racket-lang.org/guide/quote.html
+- https://lists.racket-lang.org/users/archive/2012-November/055084.html 
+- livro SICP
+
+# quote e não quotation. tradução ruim, não tem tradução. remover
+# exemplos e nao entrar em tantos detalhes sobre o pound simbol. quote
+# bloqueia a avaliação de uma forma. o quote é um comando ou uma
+# função? O que seria um comando?
+
+
+* Cond (condição)
+
+Um cond é dentre as Special Forms, Cond é uma função primitiva, na
+qual esta avalia os argumentos em ordem um por um até a condição do
+argumento retornar true(verdadeiro). Quando isso acontece, ele para a
+avaliação dos argumentos é retorna a condição estabelecida.
+
+Por exemplo o problema 1.3 onde este pedia dentre três números dados,
+retornar a soma dos quadrados dos dois maiores.
+
+(define (sum-of-squares-max3 a b c)
+(cond
+[(>= a b c) (sum-of-square a b)]
+[(>= a c b) (sum-of-square a c)]
+[(>= b a c) (sum-of-square b a)]
+[(>= b c a) (sum-of-square b c)]
+[(>= c a b) (sum-of-square c a)]
+[(>= c b a) (sum-of-square c b)]))
+
+# remover exemplos, vide comentários acima sobre `map`, `commit` etc.
+
+
+* Infinite loop (Ciclo infinito)
+
+Um loop é uma sequencia de chamadas nas quais a ultima chamada retorna
+a primeira, criando, dessa forma, uma ideia de ciclo. Na programação,
+essa ideia é muito forte e útil, quando utilizadas de forma
+inteligente (recursões são bons exemplos). Porém, o uso de Loop também
+pode ser problemático. Criar um loop infinito, significa criar um
+eterno estado de avaliação, dessa forma, nenhuma saída é concretizada
+pelo avaliador. No livro SICP, Alyssa P. Hacker e Eva Lu Ator propoem
+o seguinte codigo:
+
+(define (new-if predicate then-clause else-clause)
+(cond (predicate then-clause)
+(else else-clause)))
+
+(define (sqrt-iter guess x)
+(new-if (good-enough? guess x)
+guess
+(sqrt-iter (improve guess x) x)))
+ 
+É possível notar que o new-if causará um loop infinito, pois primeiro
+são avaliados seus argumentos, e o ultimo deles chama novamente o
+new-if, criando o cliclo interminável de chamadas.
+
+Fontes:
+
+- https://stackoverflow.com/questions/1171252/whats-the-explanation-for-exercise-1-6-in-sicp
+- Racket Documentation.
+- livro: Structure and Interpretation of Computer Programs. (SICP)
+
+# adjetivos como 'forte' e 'util' são desnecessarios. definir loop
+# antes de loop infinito é melhor. um procedimento que descrever um
+# loop é ...
+
+* Character (caracter)
+
+Um caractere em Racket é um tipo de dado que começa com #\ seguido
+pelo nome do caractere. Por exemplo, #\a, #\b, e #\space (espaço) são
+caracteres. Cada caractere corresponde a um valor escalar Unicode -
+inteiro não sinalizado representado em 21 bits - o que permite que um
+caractere em chinês ou um acento em português sejam representados como
+valores escalares. Procedures char-> integer e integer-> char
+convertem valores escalares em números e vice-versa.
+
+Fontes:
+
+- Racket Guide
+- Racket Beginning Student
+
+# ultima sentenca desnecessaria. defina o conceito apenas.
+
+
+* Higher-order procedures (Procedimentos de ordem superior)
+
+
+Higher-order procedures são "procedimentos que manipulam
+procedimentos", ou seja, são funções que assumem funções como
+argumentos, podendo também retornar uma função como resultado. Esses
+procedimentos podem ser utilizados na generalização de somatórios, em
+listas, filtrando e classificando por exemplo, promovem modularidade
+dos programas tornando em muitos casos um programa mais legível, ao
+invés de escrever funções recursivas para casos individuais.
+
+Exemplo:
+
+(define (proced x) (* (+ 5 x) 2))
+
+(map proced '(1 2 3))
+
+'(12 14 16)
+
+Fonte: 
+- SICP, seção 1.3
+
+# retirar exemplo
+
+* Normal-Order (Ordem Normal)
+
+Ao contrário da avaliação da ordem aplicada, na qual os argumentos da
+função são avaliados antes que a função seja executada, na avaliação
+de ordem normal a expressão "se expandirá completamente e depois
+reduzirá", ou seja, o intérprete irá substituir as expressões dos
+operandos por parâmetros até obter uma nova expressão que envolve
+apenas operadores primitivos e, então executará a avaliação.
+
+Exemplo:
+
+(define (square x)(* x x))
+(define (sum3 x)(+ x 3))
+
+;;Expansão
+(define exemplo (sum3 (square (+ 12 (* 4 1)))))
+
+(define exemplo (+ (* (+ 12 (* 4 1)) (+ 12 (* 4 1))) 3))
+
+;;Redução
+(define exemplo (+ (* (+ 12 4)(+ 12 4)) 3)
+
+(define exemplo (+ (* 16 16) 3)
+
+(define exemplo (+ 256 3)
+
+(define exemplo 259)
+
+Fonte: 
+
+- SICP, subseção 1.1.5
+
+# interpretador. substituir os parametros pelas expressões recebidas
+# sem avalia-las... remover exemplos.
+
+* Car (Conteúdo da parte Endereço do Registro)
+
+É uma procedure que ao ser usada em uma lista, ela acessa os dados
+desta lista e retorna com o primeiro termo. O uso do Car não
+modifica/altera o conteúdo da lista.
+
+Exemplo:
+
+(define x '( 1 2 3 4))
+
+(car x)
+
+ 1
+
+Fonte: https://medium.com/@aleksandrasays/my-other-car-is-a-cdr-3058e6743c15
+
+# retirar exemplo. entrada ruim, vide caso de `map`, `cons` comentados
+# acima.
+
+
+* Cdr (Conteúdo da parte Reduzida do Registro)
+
+É uma procedure que ao ser usada em uma lista, ela acessa os dados
+desta lista e retorna todos termos com exceção ser o primeiro (vale
+notar que ao ser usada em ema lista com apenas dois termos ela retorna
+o segundo) O uso do Cdr não modifica/altera o conteúdo da lista.
+
+Exemplo:
+
+(define x '(1 2 3 4))
+
+(cdr x)
+
+'(2 3 4)
+
+(define y '(1 2))
+
+(cdr y)
+
+2
+Fonte: https://medium.com/@aleksandrasays/my-other-car-is-a-cdr-3058e6743c15
+
+# idem comentário acima
+
+
+* Environment
+
+O environment (ambiente) é o conjunto de associações feitas entre os
+termos de uma expressão e as funções que os definem. Ao longo do
+código, vários valores ou funções são associados a diferentes nomes,
+ex: (define (mult x) (* 2 x)) atribui ao nome mult a função de
+multiplicar a sua variável por 2. Quando esse nome aparecer mais
+adiante no código, o programa deve ter alguma forma de "guardar" ou
+"ter uma memória" de qual era a função/valor que era associada(o), ou
+seja, em um nível geral, o conjunto de todas as associações feitas do
+tipo. 
+
+Fonte: SICP 1.1.2.
+
+# fora do formato, tradução deveria vir entre paranteses depois do
+# termo ingles. termos seriam simbolos? nomes seriam simbolos? 
+
+
+* Computational process
+
+Um computational process (processo computacional) não é algo concreto,
+mas sim aquilo que de fato manipula os dados em questão, e é
+controlado pelo código. O código não seria mais que um direcionamento
+do processo, por isso, um erro no primeiro causaria ao
+mal-funcionamento do segundo.
+
+Fonte: SICP 1
+
+# 'em questao'? controlado ou descrito por um código? direcionamento
+# seria descrição do processo em uma dada linguagem de programação.
+
+
+* Constructor (construtor)
+
+Um tipo de procedimento, geralmente prefixado com make-
+(e.g. make-rat, make-rectangle) que constrói (constructs) a
+representação interna para algum tipo a partir de argumentos amigáveis
+ao usuário.
+
+Por exemplo, uma representação possível para retângulos isotéticos
+(alinhados com os eixos) seria
+
+(cons (cons x
+            y)
+      (cons width
+            height))
+Um possível construtor para essa representação segue:
+
+(define (make-isothetic-rectangle x y width height)
+  (cons (cons x
+              y)
+        (cons width
+              height)))
+E um outro:
+
+(define (make-isothetic-rectangle x y diagonal-length width-over-height)
+  (let* ([height (/ diagonal-length
+                    (sqrt (+ 1 (sqr width-over-height))))]
+         [width  (* width-over-height height)])
+    (cons (cons x
+                y)
+          (cons width
+                height))))
+
+
+# faltou fonte. constroi um valor de um dado tipo... tirar
+# exemplos. definição nao é exemplo.
+
+* Selector (seletor)
+
+Um tipo de procedimento com a função de extrair informações de uma
+representação elaborada por um construtor. É boa prática que o nome do
+tipo de dados esperado pelo seletor esteja presente no nome do mesmo -
+dessa forma, fica evidente ao usuário (e para o você de daqui à dois
+anos) o que esse procedimento faz.
+
+Reaproveitando o exemplo na definição de construtor, definimos alguns
+seletores:
+
+(define (rectangle-x rect)
+  (car (car rect)))
+
+(define (rectangle-y rect)
+  (cdr (car rect)))
+
+(define (rectangle-width rect)
+  (car (cdr rect)))
+
+(define (rectangle-height rect)
+  (cdr (cdr rect)))
+
+
+# retirar exemplos.
+
+* List (lista)
+
+Um List é um procedure. Pode ser definida como uma estrutura de dados
+abstrata que implementa uma coleção ordenada de valores, onde o mesmo
+valor pode ocorrer mais de uma vez. É uma estrutura de dados abstrata
+que implementa uma coleção ordenada de valores. Cada elemento numa
+lista possui um índice, um número que identifica cada elemento da
+lista. Usando o índice de um elemento da lista é possível buscá-lo,
+utilizando os procedimentos(procedure) car e cdr. Lembrando que uma
+lista também pode ser nula, representando-a com empty?.
+
+A implementação de uma list pode ocorrer de 3 formas, sendo estas:
+
+Utilizando o procedimento primitivo cons;
+Ex: (cons 'a (cons 'b (cons 'c '())))
+`(a b c)
+
+Utilizando antes do argumento ou argumentos; Ex:(1 2 3)
+`(1 2 3)
+
+Apenas utilizando List;
+Ex: (list (1 2 3))
+`(1 2 3)
+
+# retirar exemplos. vide comentário sobre `map`, `cons` etc. Vc pode
+# ao invés de descrever a função `list` descrever o tipo de dados
+# `lista`.
+
+* Branch (ramo/ramificações)
+
+Se enxergarmos estruturas de dados como árvores, o branch é exatamente
+o que seu nome supõe, uma ramificação do “tronco” (master) que possui
+todas suas informações, mas sua alteração não influencia no restante
+dos dados. Seguindo essa analogia, se cortarmos uma ramificação o
+tronco permanece o mesmo, ou seja, caso não estejamos satisfeitos com
+o resultado de um branch, podemos simplesmente deletá-lo sem alterar o
+corpo principal da estrutura usando o comando git branch -d "nome do
+branch". Para trocarmos de uma ramificação para outra, usamos o
+comando git checkout “nome do branch”, sendo o master nosso branch de
+origem (se quisermos criar um branch e ir para ele ao mesmo tempo,
+basta colocar um -b entre o checkout e o nome do novo branch). Caso o
+conteúdo de um branch seja útil ao restante do trabalho, podemos
+adicioná-lo usando git merge “nome do branch” no corpo principal da
+estrutura. O comando git branch pode ser usado também para listar e
+renomear ramificações.
+
+Fonte: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging
+
+# branch não é sempre remificação do master. remover referencias a
+# comandos e detalhes como parametros. definia o conceito sem entrar
+# nos detalhes de como usar/manipular branches no git.
+
+
+* Internal definition (Definição interna)
+
+Usamos a definição interna quando, na construção de um progama que
+utilize diversos procedimentos, só interessa ao usuário um.
+
+Exemplo:
+
+Ao definirmos o procedimento soma dos quadrados de dois números:
+
+(define (square x) (* x x)
+
+(define (sum-of-squares x y) (+ (square x) (square y)))
+
+No procedimento acima fica visível ao usuário o procedimento square, algo que não lhe interessa. Usando a definição interna teremos:
+
+(define (sum-of-squares x y)
+ (define (square x) (* x x))
+ (+ (square x) (square y)))
+
+# primeira frase confusa. remover exemplos. a definição interna de um
+# procedimento são as expressòes que compõe a definição do
+# procedimento, certo? Fonte?
+
+* Git Push
+
+O git push é o comando que atualiza o repositório remoto com as
+modificações feitas no repositório local, "empurrando-as" para o
+servidor, a fim de incluí-las no histórico do projeto.  Dessa forma,
+essas modificações estarão disponíveis aos demais colaboradores do
+projeto, caso existam, para serem baixadas e incluídas em seus
+repositórios locais.
+
+Fontes: 
+- https://git-scm.com/docs/git-push
+- https://tableless.com.br/iniciando-no-git-parte-2/
+
+# vide comentários acima sobre `map`, `cons` etc. glossario não é
+# manual.
+
+
+* Status
+
+O comando git status tem como função nos dizer em qual branch estamos,
+se há alguma modificação a ser salva com o git commit ou se algo
+poderia ser salvo com o git commit após arquivos serem adicionados com
+o git add. Este comando pode ser seguido de alguma especificação que
+muda o output, como git status -s que nos dá uma versão mais
+simplificada do git status; ou alguma limitação do local sobre o qual
+o comando será executado (pathspec), como somente sobre um branch do
+corpo principal.
+
+Fontes: 
+- https://git-scm.com/docs/git-status#Documentation/git-status.txt--v
+- https://git-scm.com/docs/gitglossary
+
+# idem comentário acima
+
+
+* Primitive function (funções primitivas)
+
+São a base da linguagem, a define a forma de como se comporta. A
+partir dessas informações é possível desenvolver outras funções na
+linguagem.
+
+# nao entendi `a define..`. Base da linguagem? termo mais preciso? são
+# a funções já existentes na linguagem disponíveis para serem usadas
+# pelo programador para definição de outras funçòes ou procedimentos.
+
+
+* Define
+
+Trata-se de um special form, portanto, possui a sua própria regra de
+avaliação.  Em Lisp, nós o utilizamos para procedimentos de definição
+de expressões e outros procedimentos em geral.  A forma geral de um
+procedimento de definição é: (define (nome <parâmetros formais>)
+(corpo)) nome: é o símbolo a ser associado com o procedimento que
+utiliza os parâmetros no corpo.  parâmetros formais: são os
+nomes/letras usados dentro do corpo do procedimento para se referir ao
+argumento correspondente do procedimento.  corpo: é a expressão que
+produzirá o valor da aplicação do procedimento quando os parâmetros
+formais são substituídos pelos argumentos reais aos quais o
+procedimento é aplicado.
+
+Exemplo: Expresse a ideia de elevar um numero ao quadrado
+(define (square x) (* x x))
+
+# vide comentário acima sobre comandos... nao é manual é glossário.
+
+* Fork (Bifurcação)
+
+Fork é uma função do GitHub que permite bifurcar um repositório de
+outra pessoa a fim de fazer modificações no mesmo sem modificá-lo e
+comprometê-lo diretamente. É usado para não precisar sugerir mudanças,
+e sim aplicá-las e enviar um pull request para o dono do
+repositório. Dê fork em um repositório, modifique-o e envie um pull
+request.
+
+Fonte: Biblioteca de ajuda do git hub
+https://help.github.com/en/enterprise/2.13/user/articles/fork-a-repo
+
+# fale sobre o conceito, não sobre o comando. Ou escolha outra
+# expressão para definir. Forks existem em outros sistemas de controle
+# de versões também como SVN.
+
+* And, Or e Not (If)
+
+And, Or e Not são formas sintáticas que operam na composição lógica,
+possibilitando a combinação de vários testes.
+
+And:
+
+Combina dois ou mais testes lógicos, de forma que se qualquer um for
+avaliado como falso, a expressão é falsa e o restante dos "e" não é
+avaliado, resultando no consequente de If.  E se todos eles são
+avaliados como verdadeiros , o valor da expressão será o subsequente -
+ou a alternativa.
+
+Or:
+
+Se pelo menos um dos testes lógicos for avaliado como verdadeiro, o
+valor da expressão será a consequência de If . Nota-se que não é
+necessário que todos os testes sejam verdadeiros, apenas um para que a
+expressão seja verdadeira, do contrário - se nem um for - será falsa e
+o valor da expressão será o consequente.
+
+Not:
+
+Diferentemente de and e or, o not pode ser utilizado a partir de
+apenas um teste lógico, sendo utilizado para determinar a exclusão da
+expressão na avaliação.  Caso a expressão não se enquadre no conjunto
+verdade do(s) teste(s), será atribuída a ela o consequente.
+
+Fonte: SICP Book.
+
+# vide comentários acima sobre comandos. isto não é manual, mas um
+# glossário. escolha outro termo.
+
+* Iteration
+
+Iteração é uma forma de realizar procedimentos recursivos, na qual
+cria-se um programa utilizando-se de uma quantidade fixa de variáveis
+de estado e uma regra que indica como elas devem ser modificadas até
+que se alcance um estágio desejado, no qual o processo é terminado.
+Diferentemente de um processo de recurssão linear, um processo
+iterativo ocupa uma quantidade constante de memória para armazenar as
+informações necessárias a avaliação, uma vez que a mesma regra é
+repetida várias vezes.
+
+Exemplo:
+
+Um procedimento iterativo que calcula o fatorial de um número, no qual
+"o estágio desejado" é controlado pelo contador "counter":
+
+(define (factorial n)
+  (fact-iter 1 1 n))
+
+(define (fact-iter product counter max-count)
+  (if (> counter max-count)
+      product
+      (fact-iter (* counter product)
+                 (+ counter 1)
+                 max-count)))
+
+Fonte: Structure and Interpretation of Computer Programs; subseção
+1.2.1.
+
+# tirar exemplos. evitar dar exemplo do que 'não é X'.
+
+
+* Git clone
+
+O git clone é um comando que permite a clonagem de um repositório
+remoto para um diretório local. Essa função facilita a acesso de
+colaboradores para que um código seja desenvolvido. Na plataforma
+GitHub, por exemplo, o usuário pode manter um repositório público,e
+obter ajuda de algum colaborador para seu projeto, nesse caso o
+colaborador poderá clonar o repositório através de sua URL usando
+comando git clone "url". Uma vez clonado, o colaborador poderá fazer
+alterações nos arquivos em sua diretório local e, posteriormente,
+sugerir mudanças no projeto.
+
+Fontes:
+- https://www.youtube.com/watch?v=vvn2ZKnT_e8
+- https://rogerdudler.github.io/git-guide/index.pt_BR.html
+- http://www.ratamero.com/blog/git-e-github-parte-1-o-que-sao-e-como-usar/
+- https://help.github.com/pt/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+- https://tableless.com.br/tudo-que-voce-queria-saber-sobre-git-e-github-mas-tinha-vergonha-de-perguntar/
+
+# nao estamos fazendo um manual, mas um glossario. Vide comentários
+# acima para `map`, `cons` etc.
+
