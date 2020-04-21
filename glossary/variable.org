@@ -1,0 +1,15 @@
+* Variável (variable)
+
+Variável é um nome que será associado a um valor. A avaliação de uma
+variável buscará um valor previamente associado a seu nome
+identificador. A associação pode ser feita pelo uso de define, let ou
+outros meios, e a busca pelo valor acontecerá no ambiente em que a
+avaliação se insere. Por exemplo, no corpo de uma função, na expressão
+(+ x 1), a avaliação de x pode se referir tanto a uma associação feita
+internamente à definição da função quanto externamente, em um ambiente
+que englobe a definição da função.
+
+Fontes: 
+- SICP
+- https://cs.wellesley.edu/~cs251/f15/notes/racket.html#expressions-values-bindings-and-environments
+- https://www.gnu.org/software/emacs/manual/html_node/elisp/Variables.html
