@@ -6,7 +6,7 @@ para formalizar o estudo de computações. Nas linguagens de programação (espe
 as funcionais), funções anônimas são empregadas para simplificar a sintaxe de 
 um programa, pois permitem que o programador utilize funções auxiliares (que
 não têm muita relevância e são necessárias apenas em situações específicas)
-sem ter que definir cada uma separadamente.
+sem ter que nomear cada uma separadamente.
 
 Fonte:
 
