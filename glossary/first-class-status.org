@@ -1,0 +1,19 @@
+* First Class Status (Status de Primeira Classe)
+
+O grau de liberdade dado à manipulação de cada classe de objetos não é
+algo uniformizado nas linguagens de programação. Portanto, diz-se que
+a classe de objetos "X" possui status de primeira classe na linguagem "Y" 
+para sinalizar que a manipulação de objetos do tipo "X" possui menos 
+restrições do que  a manipulação de outros tipos de objetos na mesma 
+linguagem. Em racket  (assim como em outras linguagens funcionais), 
+funções/procedimentos gozam  do status de primeira classe. Nesse caso, 
+isso significa que prcedimentos:
+
+-> Podem ser atrelados a nomes;
+-> Podem ser passados para outros procedimentos como argumentos;
+-> Podem ser devolvidos como valores de procedimentos;
+-> Podem estar contidos em estruturas de dados, como listas ou pares, por exemplo.
+
+Fonte:
+-SICP, subseção 1.3.4.
+-https://en.wikipedia.org/wiki/First-class_citizen
