@@ -1,6 +1,6 @@
 * Construtor (construtor)
 
-Um procedimento que _constrói_ (_constructs_) um tipo a partir de argumentos amigáveis ao usuário. É boa prática que o nome deste seja o nome do tipo que constrói prefixado com `make-`.
+Um procedimento que _constrói_ (_constructs_) um valor de um tipo a partir de argumentos amigáveis ao usuário. É boa prática que o nome deste seja o nome do tipo que constrói prefixado com `make-`.
 
 Este procedimento deve retornar .. que represente o _objeto_ construído, de tal maneira que informações relevantes possam ser adquiridas via _seletores_.
 
