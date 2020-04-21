@@ -1,6 +1,6 @@
 * Tree-recursive (árvore de recurção)
 
-É uma expressão usada quando o valor de uma função depende de 2 ou mais valores anteriores, que por sua vez podem depender de mais valores anteriores, gerando assim uma árvore, onde os passos anteriores são difividos pelos nós da árvore.
+É uma expressão usada quando o valor de um processo depende de 2 ou mais processos antecedentes, que por sua vez podem depender de outros processos, para adquirir o resultado final, gerando assim uma árvore, onde os processos ancestrais são divididos pelos nós da árvore.
 
 Fonte: SICP, 1.2.2
 
