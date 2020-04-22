@@ -1,0 +1,7 @@
+* Selector (seletor)
+
+Um procedimento que extrai informações de uma representação elaborada por um construtor. É boa prática que o nome do tipo de dados esperado pelo seletor esteja presente no nome do mesmo - dessa forma, fica evidente ao usuário (e para o você de daqui à dois anos) o que esse procedimento faz.
+
+Fontes:
+- SICP, seção 2.1
+- P. H. Winston, B. Horn - Lisp 2nd edition, capítulo 5
