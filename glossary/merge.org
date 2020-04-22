@@ -1,0 +1,6 @@
+* Merge
+
+Merge é a união de duas branches. Dessa forma, duas ou mais pessoas podem trabalhar em diferentes branches e integrar 
+as modificações realizadas em um único arquivo. Merge só apresenta conflito se as mudanças forem na mesma linha.
+
+Fonte: https://gist.github.com/victorsenam/8580499
