@@ -1,11 +1,7 @@
 * Value (valor)
 
-Valor é o tipo mais simples de expressão, que, ao avaliado, será
-associado a si mesmo. Existem vários tipos de valores, como os
-numéricos, os booleanos, associados à ideia de "falso ou verdadeiro",
-ou o valor nulo, que corresponde à ideia de "vazio". Um exemplo de
-valor numérico é a sequência de dígitos 314, que, ao avaliada, será
-associada ao próprio número 314, em contraposição à expressão (+ 1
-313).
+Valor é o tipo mais simples de expressão, que, ao avaliado, será associado a si mesmo. Entre os tipos de valores, o que varia 
+é a sintaxe, ou seja, como escrevê-lo, mantendo a semântica, que é a regra de avaliação. Assim, qualquer expressão que siga 
+essa regra de avaliação será considerada um valor.
 
 Fonte: https://cs.wellesley.edu/~cs251/f15/notes/racket.html#expressions-values-bindings-and-environments
