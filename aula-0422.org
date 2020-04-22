@@ -10,7 +10,6 @@ Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-1
   https://classroom.github.com/a/X0WU_cHp
 
 - Ex 2.19
-
 - Ex 2.20
   
 * aula
@@ -35,49 +34,12 @@ Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-1
        items))
 #+END_SRC
 
+Veja file::aula-0422.rkt
+
 
 2. Ex 2.21
 
 3. Ex 2.22
 
-4. Ex 2.23
-
-5. árvores: estruturas hierarquicas
-
-#+BEGIN_SRC racket
-(define (count-leaves x)
-  (cond ((null? x) 0)  
-        ((not (pair? x)) 1)
-        (else (+ (count-leaves (car x))
-                 (count-leaves (cdr x))))))
-#+END_SRC
-
-6. Ex 2.24, 2.25 (juntos)
-
-7. Ex 2.27, 2.28 (grupos)
-
-8. Ex 2.29 (casa)
-
-9. mapping over trees 
-
-#+BEGIN_SRC racket
-(define (scale-tree tree factor)
-  (cond ((null? tree) nil)
-        ((not (pair? tree)) (* tree factor))
-        (else (cons (scale-tree (car tree) factor)
-                    (scale-tree (cdr tree) factor)))))
-
-(define (scale-tree tree factor)
-  (map (lambda (sub-tree)
-         (if (pair? sub-tree)
-             (scale-tree sub-tree factor)
-             (* sub-tree factor)))
-       tree))
-#+END_SRC
-
-10. Ex 2.30 (typo, juntos)
-
-11. Ex 2.31 (juntos)
- 
-12. Ex 2.32 (subsets)
+4. Ex 2.23 (vide file::for-each.rkt)
 
