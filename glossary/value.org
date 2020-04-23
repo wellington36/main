@@ -1,0 +1,7 @@
+* Value (valor)
+
+Valor é o tipo mais simples de expressão, que, ao avaliado, será associado a si mesmo. Entre os tipos de valores, o que varia 
+é a sintaxe, ou seja, como escrevê-lo, mantendo a semântica, que é a regra de avaliação. Assim, qualquer expressão que siga 
+essa regra de avaliação será considerada um valor.
+
+Fonte: https://cs.wellesley.edu/~cs251/f15/notes/racket.html#expressions-values-bindings-and-environments
