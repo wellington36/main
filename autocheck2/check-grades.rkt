@@ -19,11 +19,18 @@
  
    (lambda (suite name before after seed)
      (displayln name)
-     seed)
+     (cond ((cons? seed)
+            seed)
+           (else
+            (displayln "\n")
+            (cons 0 0))))
  
    (lambda (suite name before after seed kid-seed)
-     (displayln (grade->string (sub-grades kid-seed seed)))
-     (displayln "\n\n")
+     (cond ((cons? seed)
+            (displayln (grade->string (sub-grades kid-seed seed)))
+            (displayln "\n"))
+           (else
+            (displayln (grade->string kid-seed))))
      kid-seed)
  
    (lambda (case name action seed)
@@ -36,5 +43,5 @@
         (displayln "ERROR")
         (add-grade seed 0))))
 
-   (cons 0 0)
+   0
    suite))
