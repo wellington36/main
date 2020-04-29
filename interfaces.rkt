@@ -1,10 +1,10 @@
 #lang racket
 
-(define (map proc items)
-  (if (empty? items)
+(define (map procedure sequence)
+  (if (empty? sequence)
       empty
-      (cons (proc (car items))
-            (map proc (cdr items)))))
+      (cons (procedure (car sequence))
+            (map procedure (cdr sequence)))))
 
 (define (filter predicate sequence)
   (cond ((empty? sequence)
@@ -27,5 +27,14 @@
       empty
       (cons low (enumerate-interval (+ low 1) high))))
 
+(define (enumerate-tree tree)
+  (cond ((empty? tree)
+         empty)
+        ((not (pair? tree))
+         (list tree))
+        (else
+         (append (enumerate-tree (car tree))
+                 (enumerate-tree (cdr tree))))))
 
-(provide map filter accumulate enumerate-interval)
+
+(provide map filter accumulate enumerate-interval enumerate-tree)

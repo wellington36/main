@@ -4,6 +4,8 @@ Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-1
 
 * revisão
 
+Uso do watch do GitHub?
+
 Ex 2.32 (subsets). Se conseguir, depois tentar implementar algo que ao
 receber estrutura com repetições não produza repetições.
 
@@ -34,6 +36,8 @@ receber estrutura com repetições não produza repetições.
 7. nested mappings (nested loops)
 
    ver codigo
+
+8. Exemplos projeto DHBB
 
 * files
 
