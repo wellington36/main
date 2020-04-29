@@ -1,10 +1,6 @@
 #lang racket
 
-(define (accumulate op initial sequence)
-  (if (null? sequence)
-      initial
-      (op (car sequence)
-          (accumulate op initial (cdr sequence)))))
+(require "interfaces.rkt")
 
 (define (map p sequence)
   (accumulate (lambda (x y) (cons (p x) y)) empty sequence))
@@ -14,4 +10,3 @@
 
 (define (length sequence)
   (accumulate (lambda (x y) (+ 1 y)) 0 sequence))
-

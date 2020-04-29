@@ -1,10 +1,6 @@
 #lang racket
 
-(define (accumulate op initial sequence)
-  (if (null? sequence)
-      initial
-      (op (car sequence)
-          (accumulate op initial (cdr sequence)))))
+(require "interfaces.rkt")
 
 (define (count-leaves tree) 
    (accumulate + 0 (map (lambda (sub-tree) 
