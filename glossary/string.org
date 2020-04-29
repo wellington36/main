@@ -1,0 +1,7 @@
+* String
+
+Constituída por uma sequência de caracteres (que podem incluir espaços e números), uma string é um tipo de dado usado em linguagens de programação para representar texto. 
+
+Fonte:
+
+- https://docs.racket-lang.org/reference/strings.html?

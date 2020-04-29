@@ -1,0 +1,8 @@
+* Character (caracter)
+
+Um caractere em Racket é um tipo de dado que começa com #\ seguido pelo nome do caractere. Por exemplo, #\a, #\b, e #\space (espaço) são caracteres. Cada caractere corresponde a um valor escalar Unicode - inteiro não sinalizado representado em 21 bits -, o que permite que um caractere em chinês ou um acento em português sejam representados como valores escalares. 
+
+Fontes:
+
+- [Racket Guide](https://docs.racket-lang.org/guide/characters.html)
+- [Racket Beginning Student](https://docs.racket-lang.org/htdp-langs/beginner.html)
