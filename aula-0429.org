@@ -1,7 +1,5 @@
 #+Title: aula 29 abril de 2020
 
-Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html
-
 * revisão
 
 Uso do watch do GitHub?
