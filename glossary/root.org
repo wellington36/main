@@ -1,0 +1,15 @@
+Root (raiz/origem)  
+
+  
+
+O root (ou super usuário) é um tipo de usuário de sistemas operacionais baseados em Unix que possui permissões especiais para fazer qualquer operação sobre o sistema e tem acesso a todos seus processos e arquivos.  Nesses sistemas, qualquer usuário com identificador (UID) 0 é um super usuário. 
+
+ 
+
+ 
+Fontes: https://diolinux.com.br/2012/08/dicionario-de-termos-linux.html 
+
+https://en.m.wikipedia.org/wiki/Superuser 
+ 
+
+

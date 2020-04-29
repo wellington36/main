@@ -1,0 +1,9 @@
+Branch (ramo/ramificações) 
+
+Se enxergarmos estruturas de dados como árvores, o branch é exatamente o que seu nome supõe, uma ramificação de alguma parte, que possui todas suas informações, mas sua alteração não influencia no restante dos dados. Seguindo essa analogia, se cortarmos uma ramificação a árvore permanece a mesma, ou seja, caso não estejamos satisfeitos com o resultado de um branch, podemos simplesmente deletá-lo sem alterar o corpo principal da estrutura, ou adicioná-lo ao trabalho principal caso o resultado seja satisfatório. 
+
+Fonte: https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging 
+
+ 
+
+

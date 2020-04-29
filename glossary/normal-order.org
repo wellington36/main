@@ -1,0 +1,9 @@
+* Normal-Order (Ordem Normal)
+
+Ao contrário da avaliação da ordem aplicada, na qual os argumentos da função são avaliados antes que a função seja executada, na avaliação
+de ordem normal a expressão "se expandirá completamente e depois reduzirá", ou seja, o interpretador irá substituir os parâmetros pelas
+expressões recebidas sem avaliá-las até obter uma nova expressão que envolve apenas operandos primitivos e então executará a avaliação.
+
+Fonte:
+
+- SICP, subseção 1.1.5

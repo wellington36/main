@@ -68,3 +68,7 @@ Conceitos básicos:
 - pull request
 - fork, push, close, pull
 
+* Tópico 4: Introdução à programação em Racket
+
+Vide arquivos das aulas.
+

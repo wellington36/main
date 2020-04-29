@@ -1,0 +1,9 @@
+* Higher-Order Procedures
+ 
+ Higher-Order Procedures são procedimentos que recebem um procedimento como argumento e retornam um valor ou procedimento como resultado. 
+Esses procedimentos promovem modularidade dos programas tornando em muitos casos um programa mais legível, ao invés de escrever 
+procedimentos recursivos para casos individuais.
+
+Fonte:
+
+- SICP, seção 1.3

@@ -1,0 +1,13 @@
+#+Title: aula 30 abril de 2020
+
+* revisão
+
+Soluções 2.38, 2.39, 2.34, 2.37?
+
+* aula
+
+1. Exemplo projeto DHBB e a biblioteca cl-conllu
+
+* files
+
+

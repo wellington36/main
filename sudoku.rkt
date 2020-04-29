@@ -1,4 +1,5 @@
 #lang racket
+
 ;; @author Daniel Csillag
 ;; @what   Sudoku solver, based off https://youtu.be/G_UYXzGuqvM.
 ;;

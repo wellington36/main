@@ -1,0 +1,44 @@
+#+Title: aula 29 abril de 2020
+
+* revisão
+
+Uso do watch do GitHub?
+
+Ex 2.32 (subsets). Se conseguir, depois tentar implementar algo que ao
+receber estrutura com repetições não produza repetições.
+
+* aula
+
+   In working with compound data, we've stressed how data abstraction
+   permits us to design programs without becoming enmeshed in the
+   details of data representations, and how abstraction preserves for
+   us the flexibility to experiment with alternative representations
+
+1. Sec 2.2.3  = conventional interfaces
+
+   The value of expressing programs as sequence operations is that
+   this helps us make program designs that are modular, that is,
+   designs that are constructed by combining relatively independent
+   pieces. We can encourage modular design by providing a library of
+   standard components together with a conventional interface for
+   connecting the components in flexible ways.
+
+   salary example
+
+2. Ex 2.33
+3. Ex 2.34 (casa)
+4. Ex 2.35
+5. Ex 3.37 (casa)
+6. Ex 2.38 (casa)
+7. Ex 2.39 (casa)
+
+8. nested mappings (nested loops)
+
+* files
+
+- file:nested-mappings.rkt
+- file:prime.rkt
+- file:conventional-interfaces.rkt
+- file:interfaces.rkt
+- file:fibonacci.rkt
+

@@ -1,0 +1,21 @@
+* Number (Número)
+
+Um número em Racket é um tipo de dado embutido (built-in), classificado como complexo - conjunto matemático englobando todos os números, onde cada elemento é da forma usual a+bi, sendo a parte real e b a parte imaginária. Um número pode ser:
+
+- exato (inteiro, racional, ou complexo com partes real e imaginária
+(não nula) exatas), expresso como inteiro ou fração; ou
+
+- inexato (ponto flutuante IEEE - ex. 4.0 -, ou complexo com parte
+imaginária inexata) impresso com um ponto decimal ou especificador de
+expoente. Cálculos com números inexatos produzem resultados inexatos
+(exceto comparações).
+
+Um número exato pode ser arbitrariamente grande ou pequeno, sendo
+limitado apenas à quantidade de memória disponível e, em geral,
+operações com inteiros menores são as mais rápidas. Os inteiros,
+racionais, reais e complexos são definidos da maneira usual, sendo
+utilizadas procedures para reconhecê-los.
+
+Fonte:
+- [Racket Guide](https://docs.racket-lang.org/guide/numbers.html)
+- [Racket Reference](https://docs.racket-lang.org/reference/numbers.html)
