@@ -28,16 +28,17 @@ receber estrutura com repetições não produza repetições.
    salary example
 
 2. Ex 2.33
-3. Ex 2.34
+3. Ex 2.34 (casa)
 4. Ex 2.35
-5. Ex 2.38
-6. Ex 2.39
+5. Ex 3.37 (casa)
+6. Ex 2.38 (casa)
+7. Ex 2.39 (casa)
 
-7. nested mappings (nested loops)
+8. nested mappings (nested loops)
 
    ver codigo
 
-8. Exemplos projeto DHBB
+9. Exemplos projeto DHBB
 
 * files
 

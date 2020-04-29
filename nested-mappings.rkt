@@ -3,6 +3,8 @@
 (require "interfaces.rkt")
 (require "prime.rkt")
 
+;; (require racket/trace)
+
 ;; example 1
 
 (let ((n 6))
@@ -40,9 +42,12 @@
           sequence))
 
 (define (permutations s)
-  (if (empty? s)        ; empty set?
-      (list empty)      ; sequence containing empty set
+  (if (empty? s)    ; empty set?
+      (list empty)  ; sequence containing empty set
       (flatmap (lambda (x)
                  (map (lambda (p) (cons x p))
                       (permutations (remove x s))))
                s)))
+
+;; (trace permutations)
+       
