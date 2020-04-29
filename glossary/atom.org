@@ -1,0 +1,6 @@
+* Atom (átomo)
+
+Em Racket, Átomo é basicamente um dado de simples estrutura, que não é o vazio e que contém um espaço único para armazenar informação, ou seja que não é o 'empty' ou uma 'cons'.
+
+Fonte:
+- https://docs.racket-lang.org/heresy/logic.html
