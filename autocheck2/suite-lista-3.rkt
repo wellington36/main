@@ -8,9 +8,11 @@
 
 (require rackunit)
 
+(define epsilon 0.001)
+
 (define (check-equal-intervals? a b)
-  (check-= (lower-bound a) (lower-bound b) 0.01)
-  (check-= (upper-bound a) (upper-bound b) 0.01))
+  (check-= (lower-bound a) (lower-bound b) epsilon)
+  (check-= (upper-bound a) (upper-bound b) epsilon))
 
 (define suite
   (test-suite "lista-3"
@@ -90,8 +92,8 @@
                                                              (make-interval 288 432)))
 
                           (test-case "percent.1"
-                                     (check-equal? (percent (make-interval 9 11)) 10))
+                                     (check-= (percent (make-interval 9 11)) 10 epsilon))
                           (test-case "percent.2"
-                                     (check-equal? (percent (make-interval 90 110)) 10)))))
+                                     (check-= (percent (make-interval 90 110)) 10 epsilon)))))
 
 (provide suite)
