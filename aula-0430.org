@@ -8,6 +8,11 @@ Soluções 2.38, 2.39, 2.34, 2.37?
 
 1. Exemplo projeto DHBB e a biblioteca cl-conllu
 
+2. Sec 2.3 symbolic data
+
+ - quotes
+ - the process of finding a derivative is called differentiation
+
 * files
 
 
