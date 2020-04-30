@@ -13,7 +13,7 @@
 		       (filter (lambda (x) (not (= x element))) ;A cada iteração, os elementos
 			       (cdr lst))))))			;iguais ao elemento adicionado
   (make-set-iter null lst))					;ao conjunto são excluídos  u- 
-								;tilizando o predicado <filter>.
+								;tilizando a primitiva <filter>.
 ;;Cria um conjunto com os elementos da lista
 ;;dada e produz os subconjuntos, com uma ló-
 ;;gica parecida  com  a do <count-change> do 
