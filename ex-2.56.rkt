@@ -80,6 +80,10 @@
          (error "unknown expression type -- DERIV" exp))))
 
 
-;;teste
-;
-;(deriv '(** x (+ x y)) 'x)
+;; testes
+
+(deriv '(** x (+ x y)) 'x)
+(deriv '(+ x 3) 'x)
+(deriv '(* x y) 'x)
+(deriv '(* (* x y) (+ x 3)) 'x)
+
