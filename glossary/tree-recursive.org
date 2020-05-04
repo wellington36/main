@@ -1,0 +1,6 @@
+* Tree-recursive (árvore de recursão)
+
+É uma expressão usada quando o valor de uma função depende do procedimento de avaliar 2 ou mais valores anteriores que por sua vez também dependem de avaliar outros valores, formando assim uma árvore de valores onde a base é formada por valores mais antigos e dividida em nós pontos onde existe dependencia de valores novos com mais antigos.  
+
+Fonte: SICP, 1.2.2
+
