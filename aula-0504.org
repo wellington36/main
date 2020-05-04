@@ -18,18 +18,7 @@ Links monitoria e última aula.
 
 3. Ex 2.56
 
-4. Informally, a set is simply a collection of distinct objects. To
-   give a more precise definition we can employ the method of data
-   abstraction. That is, we define ``set'' by specifying the
-   operations that are to be used on sets. These are union-set,
-   intersection-set, element-of-set?, and adjoin-set. (e footnote 37)
-
-5. Ex 2.59
-
-
-* files
-
-* Leituras
+* leituras
 
 - http://www.literateprogramming.com
 - https://www.jstatsoft.org/article/view/v046i03

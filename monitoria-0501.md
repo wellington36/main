@@ -24,3 +24,10 @@ remote add upstream [link]`, onde `[link]` é o endereço de clone do
 repositório que se pretende fazer o pull, é possível usar `git pull
 upstream master` para puxar as alterações desse repositório.
 
+
+# Arquivos
+
+- ex-2.32-m.rkt
+- ex-2.33-m.rkt
+- ex-2.37-m.rkt
+
