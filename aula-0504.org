@@ -1,0 +1,32 @@
+#+Title: aula 30 abril de 2020
+
+* revisão
+
+Links monitoria e última aula.
+
+* aula
+
+1. Ex 2.53 até 2.55
+
+2. Sec 2.3 symbolic data
+
+   1. quotes
+
+   2. the process of finding a derivative is called differentiation
+
+   3. seletores e construtor, não temos modificador de valores!
+
+3. Ex 2.56
+
+4. Informally, a set is simply a collection of distinct objects. To
+   give a more precise definition we can employ the method of data
+   abstraction. That is, we define ``set'' by specifying the
+   operations that are to be used on sets. These are union-set,
+   intersection-set, element-of-set?, and adjoin-set. (e footnote 37)
+
+5. Ex 2.59
+
+
+* files
+
+
