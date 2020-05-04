@@ -29,4 +29,8 @@ Links monitoria e última aula.
 
 * files
 
+* Leituras
 
+- http://www.literateprogramming.com
+- https://www.jstatsoft.org/article/view/v046i03
+- [[https://docs.racket-lang.org/reference/booleans.html?q=eq#%28def._%28%28quote._~23~25kernel%29._eqv~3f%29%29][igualdade em Racket]]
