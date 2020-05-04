@@ -1,0 +1,34 @@
+#+Title: aula 30 abril de 2020
+
+* revisão
+
+Links monitoria e última aula.
+
+* aula
+
+1. Ex 2.53 até 2.55
+
+2. Sec 2.3 symbolic data
+
+   1. quotes ~> processamento simbólico de dados; manipulação de
+      símbolos.
+
+   2. Exemplo: the process of finding a derivative is called
+      differentiation
+
+   3. seletores e construtor, notem que não temos modificador de
+      valores! Por exemplo, não modificamos uma soma, sempre criamos
+      uma nova soma.
+
+3. Ex 2.56
+
+* arquivos
+
+- file:derivadas.rkt
+- file:quotes.rkt
+
+* leituras
+
+- http://www.literateprogramming.com
+- https://www.jstatsoft.org/article/view/v046i03
+- [[https://docs.racket-lang.org/reference/booleans.html?q=eq#%28def._%28%28quote._~23~25kernel%29._eqv~3f%29%29][igualdade em Racket]]

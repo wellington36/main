@@ -1,0 +1,33 @@
+# Monitoria 01/05
+
+Foram tiradas dúvidas e resolvidos os exercícios
+2.32, 2.33 e 2.37.
+
+Arquivos terminados em til `~` são considerados arquivos ocultos, por
+isso não aparecem no explorador de arquivos. O comando `git rm *~`
+remove todos os arquivos terminados em til da pasta atual no
+repositório.
+
+Para evitar incluir esses arquivos nos commits, em vez de dar git add
+com `git add .`, que inclui todos os arquivos da pasta atual, usar
+`git add *.rkt`, que inclui apenas os arquivos terminados em `.rkt`.
+
+Ao trabalhar localmente no seu repositório git, ele guarda a variável
+`origin`, que é o endereço usado para fazer o clone.  Os comados `git
+push` e `git pull` são abreviações de `git push origin master` e `git
+pull origin master`, ou seja, o pull e push são feitos no endereço
+`origin`.  Quando se trabalha com o fork de um repositório, é preciso
+fazer pull de um repositório diferente do que foi feito clone. Para
+fazer isso é preciso adicionar a variável `upstream` com o endereço do
+repositório que será feito o pull.  Depois de usar o comando `git
+remote add upstream [link]`, onde `[link]` é o endereço de clone do
+repositório que se pretende fazer o pull, é possível usar `git pull
+upstream master` para puxar as alterações desse repositório.
+
+
+# Arquivos
+
+- ex-2.32-m.rkt
+- ex-2.33-m.rkt
+- ex-2.37-m.rkt
+
