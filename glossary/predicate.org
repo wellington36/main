@@ -1,0 +1,3 @@
+Predicate (predicado)
+
+Um predicado é qualquer símbolo que, quando aplicado a argumentos, forma uma expressão; esta, por sua vez, quando avaliada, retorna um boolean (desde que todos os termos envolvidos estejam definidos/especificados), ou seja, seu valor lógico pode ser avaliado como verdadeiro ou falso, apenas. Por exemplo, (= 1 2) e (> 5 2) são expressões em que "=" e ">" são símbolos que se comportam como predicados.
