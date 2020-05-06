@@ -20,10 +20,7 @@
 
 5. Ex 2.59
 
-6. Ex 2.60
+6. Ex 2.60 (casa)
 
-7. Ex 2.61 e 2.62
-
-8. sets as binary trees
-
-   
+7. Lembram do código [[https://github.com/cpdoc/dhbb-nlp/blob/master/primeiras_frases/add-file.lisp][add-file.lisp]]? Quais erros cometi? se eu tivesse
+   usado as operações sobre conjuntos?

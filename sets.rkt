@@ -6,8 +6,6 @@
         (else
          (element-of-set? x (cdr set)))))
 
-; O(n/2) = O(n) = O(2n) 
-
 (define (adjoin-set x set)
   (if (element-of-set? x set)
       set
@@ -21,6 +19,14 @@
         (else
          (intersection-set (cdr set1) set2))))
 
-; O(nm) = O(n^2)
-; O(2n) = O(n)
+(define (union-set set1 set2)
+  (cond ((null? set1) set2)
+        ((null? set2) set1)
+        ((not (element-of-set? (car set1) set2))
+         (cons (car set1)
+               (union-set (cdr set1) set2)))
+        (else
+         (union-set (cdr set1) set2))))
+
+(provide element-of-set? adjoin-set intersection-set)
 

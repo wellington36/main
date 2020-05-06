@@ -1,0 +1,16 @@
+#+Title: aula 30 abril de 2020
+
+* revisão
+
+1. exercicio 2.60? Discussões?
+
+* aula
+
+1. sets as binary trees
+
+2. ex 2.61 e 2.62
+
+3. huffman encoding ou outro exemplo!
+
+  
+
