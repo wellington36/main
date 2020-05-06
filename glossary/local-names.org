@@ -1,0 +1,10 @@
+* Local Names (Nomes Locais)
+
+Local names são variáveis associadas a um valor dentro de um escopo restrito, normalmente o corpo de
+um procedimento ou o corpo de um aforma como (let ...). 
+Além disso, o autor do procedimento é livre para colocar quaisquer nomes em seu procedimento, desde 
+que os nomes sejam os mesmos nos parâmetros e no corpo do procedimento. Vale também ressaltar que
+esses nomes são válidos apenas dentro do procedimento em questão, sendo assim, se em escopo distindo 
+haverem nomes iguais, um não interferirá no outro, sendo avaliados de forma independente em cada procedimento.
+
+Fonte: SICP, subseção 1.1.8
