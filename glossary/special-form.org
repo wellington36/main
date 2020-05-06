@@ -1,0 +1,5 @@
+* Special Form (Forma Especial)
+
+Uma forma especial possui uma regra de avaliação e sintaxe especial. Cada forma especial tem sua própria regra de avaliação. Alguns exemplos em racket são: define, cond, if, lambda, let entre outros.
+
+Fonte: -https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node59.html
