@@ -4,15 +4,26 @@
 
 * aula
 
-4. Informally, a set is simply a collection of distinct objects. To
+1. Informally, a set is simply a collection of distinct objects. To
    give a more precise definition we can employ the method of data
    abstraction. That is, we define ``set'' by specifying the
    operations that are to be used on sets. These are union-set,
    intersection-set, element-of-set?, and adjoin-set. (e footnote 37)
 
+2. repreentação vs complexidade operações. Sets como listas não
+   ordenadas com e sem repetição.
+
+3. sets como listas ordenadas. complexidade de pior/melhor/average
+   casos.
+
+4. intersection-set e o caso do projeto que apresentei!
+
 5. Ex 2.59
 
 6. Ex 2.60
 
-7. Sec 2.3.3 e 2.3.4
+7. Ex 2.61 e 2.62
+
+8. sets as binary trees
+
    
