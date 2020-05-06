@@ -1,5 +1,7 @@
 #lang racket
 
+(require racket/trace)
+
 (define (variable? x)
   (symbol? x))
 
@@ -81,6 +83,8 @@
 
 
 ;; testes
+
+(trace deriv)
 
 (deriv '(** x (+ x y)) 'x)
 (deriv '(+ x 3) 'x)
