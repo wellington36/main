@@ -1,0 +1,8 @@
+Boolean (Booleano)
+
+Booleanos são o resultado de expressões condicionais de um predicado, e podem ser um valor verdadeiro ou falso (#t ou #f). Como boa prática, é comum utilizar uma interrogação após o predicado.
+
+Fontes: 
+- SICP-JavaScript Adaptation subseção 1.1.6: https://sicp.comp.nus.edu.sg/sicpjs.pdf
+- https://www.lvguowei.me/post/sicp-goodness-data-2/
+- https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node75.html
