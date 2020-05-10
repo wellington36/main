@@ -9,7 +9,7 @@
   
   (aux lis a (+ (- b a) 1)))
 
-(define (maxlst lst) ;recebe uma lista de números e devolve o maior elemento da lista
+(define (maxlst lst) ;recebe uma lista de números e devolve o maior elemento
   (if (empty? (cdr lst))
       (car lst)
       (if (> (car lst) (cadr lst))
@@ -42,5 +42,7 @@
 (define (water-amount array) ;DEVOLVE A QUANTIDADE DE ÁGUA ARMAZENADA
   (- (foldr + 0 (after-rain array)) (foldr + 0 array)))
 
-(water-amount '(2 3 1 2 4))
-(water-amount '(4 5 3 7 1 6 3))
+;;(water-amount '(2 3 1 2 4))
+;;(water-amount '(4 5 3 7 1 6 3))
+
+(provide maxlst)

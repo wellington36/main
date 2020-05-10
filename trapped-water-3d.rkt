@@ -7,12 +7,7 @@ impossível que tivessemos uma coluna de água mais alta do que a mais alta colu
 Assim como seria impossível um "bloco" de água não ser cercado pelos 4 lados (pois a água escorreria).
 |#
 
-(define (maxlst lst) ;recebe uma lista de números e devolve o maior elemento
-  (if (empty? (cdr lst))
-      (car lst)
-      (if (> (car lst) (cadr lst))
-          (maxlst (cons (car lst) (cddr lst)))
-          (maxlst (cdr lst)))))
+(require "trapped-water.rkt")
 
 (define (maxmtrx m) (maxlst (map maxlst m))) ;recebe uma lista de listas de números e devolve o maior elemento
 
@@ -52,8 +47,8 @@ Assim como seria impossível um "bloco" de água não ser cercado pelos 4 lados 
 (define (change m p v) ;muda matriz m (transformando o elemento na posição p no valor v)
   (list-set m (- (lin-pos p) 1) (list-set (list-ref m (- (lin-pos p) 1)) (- (col-pos p) 1) v)))
 
-(define (trapped-water x) ;recebe uma matriz e devolve ela "pós-chuva" onde teremos colunas de água inclusas
-
+(define (trapped-water m-orig) ;recebe uma matriz e devolve ela "pós-chuva" onde teremos colunas de água inclusas
+;;note que m-orig é a matriz original (sem colunas d'água)
   (define (possible-escape? m p) ;é possível que a água escape dessa posição?
     (let ([i (lin-pos p)] [j (col-pos p)])
       (> (elt-i-j m p)
@@ -67,7 +62,7 @@ Assim como seria impossível um "bloco" de água não ser cercado pelos 4 lados 
 
   (define (waterflow m p) ;fluxo de água (remove a água que tem como escapar, analisando ponto a ponto)
     (cond ((equal? p end-point) m)
-          ((equal? (elt-i-j m p) (elt-i-j x p)) (waterflow m (next m p))) ;testa se não há água acima da coluna neste ponto
+          ((equal? (elt-i-j m p) (elt-i-j m-orig p)) (waterflow m (next m p))) ;testa se não há água acima da coluna neste ponto
           ((possible-escape? m p) (waterflow (change m p (- (elt-i-j m p) 1)) (next m p))) ;essa água que há, pode escapar?
           (#t (waterflow m (next m p))))) ;há água, mas ela não pode escapar então avançamos para a analíse do próximo ponto
 
@@ -75,7 +70,7 @@ Assim como seria impossível um "bloco" de água não ser cercado pelos 4 lados 
     (cond ((equal? (waterflow m init) m) m)
           (#t (improve-the-flow (waterflow m init)))))
 
-  (improve-the-flow (put-water x)))
+  (improve-the-flow (put-water m-orig)))
 
 (define (print-mtrx m) ;printa a lista de listas
   (display (car m))
@@ -86,8 +81,8 @@ Assim como seria impossível um "bloco" de água não ser cercado pelos 4 lados 
   (- (foldr + 0 (map (λ (x) (foldr + 0 x)) (trapped-water k)))
      (foldr + 0 (map (λ (x) (foldr + 0 x)) k))))
 
-#|
-(print-mtrx (trapped-water (list (list 9 9 9)
+
+#|(print-mtrx (trapped-water (list (list 9 9 9)
                                  (list 9 0 9)
                                  (list 9 3 2))))
 
