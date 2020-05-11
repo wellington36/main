@@ -30,12 +30,11 @@ dispatching on type ~> identificar tipos e funções adequadas. Como
 lidar com evolução do sistema? Diferentes implementações devem
 concordar com nomes.
 
-* Files
+* files
 
+- tag-system.rkt
+- utils.rkt
 - complex-alyssa.rkt
 - complex-ben.rkt
-- complex.rkt
 - complex-impl.rkt
-- utils.rkt
-- tag-system.rkt
-
+- complex.rkt

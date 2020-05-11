@@ -20,7 +20,8 @@
         (else
          (intersection-set (cdr set1) set2))))
 
-;teste
+
+;; testes
 
 (element-of-set? 3 '( 1 2 2 4 4 3 3 2))
 
