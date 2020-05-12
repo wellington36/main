@@ -1,6 +1,6 @@
 #lang racket
 
-;; autor: caio lins
+;; autor: Caio Lins
 ;; 
 ;; Cada sudoku é representado como uma lista de listas (as linhas do
 ;; sudoku).
