@@ -1,5 +1,7 @@
 #lang racket
 
+;; https://docs.racket-lang.org/guide/hash-tables.html
+
 (define table (make-hash))
 
 (define (start)
