@@ -2,7 +2,8 @@
 
 (define ftable
   (list (cons 'add +)
-        (cons 'sub -)))
+        (cons 'sub -)
+        ...))
 
 
 (assoc 'add ftable)

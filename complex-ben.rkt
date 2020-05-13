@@ -25,7 +25,6 @@
               (cons (* r (cos a)) (* r (sin a)))))
 
 
-(provide square
-         real-part imag-part
+(provide real-part imag-part
          magnitude angle
          make-from-real-imag make-from-mag-ang)

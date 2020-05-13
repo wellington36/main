@@ -1,6 +1,7 @@
 #lang racket
 
-(require "complex-impl.rkt")
+;; (require "complex-impl.rkt")
+(require "complex-book.rkt")
 
 (define (add-complex z1 z2)
   (make-from-real-imag (+ (real-part z1) (real-part z2))
@@ -21,5 +22,11 @@
 
 ;; test
 
-(add-complex (make-from-real-imag 21 2)
-             (make-from-real-imag 21 2))
+(let ((ac (make-from-real-imag 21 2)))
+  (add-complex (mul-complex ac ac)
+               (add-complex ac ac))
+
+  (div-complex (mul-complex ac ac)
+               (add-complex ac ac)))
+
+
