@@ -5,7 +5,7 @@
 One particular scheme for doing this is called the Huffman encoding
 method, after its *discoverer*, David Huffman.
 
-Descobriu? Inventou? Este vídeo faz um comentário sobre isso:
+Descobriu vs Inventou? Este vídeo faz um comentário sobre isso:
 https://www.youtube.com/watch?v=IOiZatlZtGU&t=2174s
 
 separate the task of designing a program that uses rational numbers

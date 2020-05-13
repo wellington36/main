@@ -19,3 +19,7 @@
                      (- (angle z1) (angle z2))))
 
 
+;; test
+
+(add-complex (make-from-real-imag 21 2)
+             (make-from-real-imag 21 2))
