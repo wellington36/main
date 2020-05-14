@@ -1,11 +1,13 @@
+
 #lang racket
 
 ;; @author Daniel Csillag
 ;; @what   Sudoku solver, based off https://youtu.be/G_UYXzGuqvM.
 ;;
+;; I'll be using a list of lists for representing the sudoku grid. It
+;; turned out *way* more elegant than using matrices.
+;;
 ;; NOTE: if run from the Racket REPL, it prints the grids nicely.
-
-; I'll be using a list of lists for representing the sudoku grid. It turned out *way* more elegant than using matrices.
 
 ; Is `x` a member of list `lst`?
 (define (member? x lst)
@@ -46,54 +48,10 @@
 
 ; Check if it's possible to *insert* `n` at `(i,j)` in grid `grid`
 (define (is-possible grid i j n)
-  (not (or (member? n (list-ref grid i))            ; Same row
-           (member? n (list-ref-transpose grid j))  ; Same column
-           (member? n (grid-square grid i j)))))    ; Same grid-square
+  (not (or (member? n (list-ref grid i))            ; same row
+           (member? n (list-ref-transpose grid j))  ; same column
+           (member? n (grid-square grid i j)))))    ; same grid-square
 
-
-; Some implementations of the `solve(grid)` function...
-; (define (solve grid)
-;   (if (grid-member grid 0)
-;       (let ([i (car (find-first-in-grid grid 0))]
-;             [j (cdr (find-first-in-grid grid 0))])
-;         (foldl (lambda (n grid)
-;                  (if (is-possible grid i j n)
-;                      (grid-set (solve (grid-set grid i j n))
-;                                i j 0)
-;                      grid))
-;                grid
-;                (range 1 10)))
-;       (print grid)))
-
-; (define (solve grid)
-;   (if (grid-member grid 0)
-;       (let ([i (car (find-first-in-grid grid 0))]
-;             [j (cdr (find-first-in-grid grid 0))])
-;         (foldl (lambda (n grid)
-;                  (if (not (is-possible grid i j n))
-;                      grid
-;                      (let ([solved (solve (grid-set grid i j n))])
-;                        (if (grid-member solved 0)
-;                            (grid-set solved i j 0)
-;                            solved))))
-;                grid
-;                (range 1 10)))
-;       grid))
-
-; (define (solve grid)
-;   (if (not (grid-member grid 0))
-;       grid
-;       (let ([i (car (find-first-in-grid grid 0))]
-;             [j (cdr (find-first-in-grid grid 0))])
-;         (foldl (lambda (n grid)
-;                  (if (not (is-possible grid i j n))
-;                      grid
-;                      (let ([solved (solve (grid-set grid i j n))])
-;                        (if (grid-member solved 0)
-;                            (grid-set solved i j 0)
-;                            solved))))
-;                grid
-;                (range 1 10)))))
 
 (define (solve grid)
   (cond
@@ -114,7 +72,8 @@
              (range 1 10))]))
 
 
-; Some test matrices...
+; tests
+
 (define test-grid
   [list [list 8 9 0   7 0 0   0 1 0]
         [list 7 0 6   4 8 0   0 0 0]
@@ -154,9 +113,7 @@
         [list 0 4 0   0 3 0   0 0 8]
         [list 6 3 0   1 0 0   0 0 0]])
 
-; Finally, run it!
+
 (solve test-grid)
 (solve test-grid2)
 (solve test-grid3)
-
-;; vim: fdc=3

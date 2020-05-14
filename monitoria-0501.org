@@ -1,7 +1,6 @@
-# Monitoria 01/05
+#+Title: Monitoria 01/05/2020
 
-Foram tiradas dúvidas e resolvidos os exercícios
-2.32, 2.33 e 2.37.
+Foram tiradas dúvidas e resolvidos os exercícios 2.32, 2.33 e 2.37.
 
 Arquivos terminados em til `~` são considerados arquivos ocultos, por
 isso não aparecem no explorador de arquivos. O comando `git rm *~`
@@ -25,7 +24,7 @@ repositório que se pretende fazer o pull, é possível usar `git pull
 upstream master` para puxar as alterações desse repositório.
 
 
-# Arquivos
+# arquivos
 
 - ex-2.32-m.rkt
 - ex-2.33-m.rkt

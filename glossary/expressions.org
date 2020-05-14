@@ -1,0 +1,7 @@
+* Expressions (Expressões)
+
+Expressões são combinações de valores, variáveis, operadores e chamadas de função que quando avaliadas, terão um valor associado. 
+
+Fonte:
+
+- https://www.techopedia.com/definition/1808/expression-computer-science
