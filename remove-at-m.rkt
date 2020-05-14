@@ -1,5 +1,31 @@
 #lang racket
 
+#|
+
+The selected items shall be returned in a list. Example: 
+
+* (rnd-select '(a b c d e f g h) 3)
+(E D A)
+
+Hint: Use the built-in random number generator and the result of
+problem P20.
+
+|#
+
+
+;; P20: Remove the K'th element from a list.
+
+(define (remove-at alist p)
+  (define (aux alist before n)
+    (if (equal? n 0)
+        (car alist)))
+  (aux alist empty 0))
+
+(define (rnd-select alist num)
+  
+  (let ((len (length alist)))
+    ))
+
 ; A função remove-at recebe uma lista e um valor n
 ; e retorna a lista sem o n-ézimo elemento
 
