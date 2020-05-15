@@ -2,7 +2,8 @@
 
 * revisão
 
-Dúvidas sobre código de números complexos.
+1. dúvidas sobre código de números complexos.
+2. arquivos com soluções para os `99 problems`.
 
 * aula
 
