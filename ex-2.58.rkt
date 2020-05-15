@@ -1,23 +1,19 @@
 #lang racket
 
-; Alteração na solução do problema 2.56
+#|
+Alteração na solução do problema 2.56
 
-; Define as funções op1 e op2 que retornam
-; o primeiro e o segundo operando de uma operação
+Define as funções op1 e op2 que retornam o primeiro e o segundo
+operando de uma operação. A função "operation" retorna qual é a
+operação da expressão. "make-operation" recebe os operandos e a
+operação e retorna uma expressão.
 
-; A função "operation" retorna qual é a
-; operação da expressão
+Com essas quatro definições é possível alterar a ordem dos operandos e
+do operador de uma expressão. Assim a expressão pode ser definida como
+'(op1 operation op2) em vez de '(operation op1 op2)
 
-; "make-operation" recebe os operandos e a operação
-; e retorna uma expressão
-
-; Com essas quatro definições é possível alterar
-; a ordem dos operandos e do operador de uma expressão
-
-; Assim a expressão pode ser definida como
-; '(op1 operation op2) em vez de '(operation op1 op2)
-
-; ex: '(* x y) passa a ser '(x * y)
+ex: '(* x y) passa a ser '(x * y)
+|#
 
 (define (op1 s) (car s))
 (define (op2 s) (caddr s))
@@ -92,3 +88,4 @@
           (deriv (op1 exp) var)))
         (else
          (error "unknown expression type -- DERIV" exp))))
+

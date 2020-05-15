@@ -7,6 +7,13 @@
 
 * aula
 
+- Ex 2.57
+
+- Ex 2.63
+- Ex 2.64
+
+- Ex 2.73
+
 - message passing
 
   - section 2.1.3, where we saw how cons, car, and cdr could be
@@ -14,8 +21,9 @@
 
   - one argument?
 
-- exercícios
+- Next: Now we will see how to use this same idea not only to define
+  operations that are generic over different representations but also
+  to define operations that are generic over different kinds of
+  arguments.
 
-
-
-
+  - aritmética: complex, racionais, nat (ordinal)
