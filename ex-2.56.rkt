@@ -1,6 +1,6 @@
 #lang racket
 
-(require racket/trace)
+; (require racket/trace)
 
 (define (variable? x)
   (symbol? x))
@@ -20,9 +20,9 @@
         (else
          `(+ ,a1 ,a2))))
 
-(define (addend s) (cadr s))
+(define (addend s) (cadr s)) 
 
-(define (augend s) (caddr s))
+(define (augend s) (caddr s)) 
 
 (define (sum? x)
   (and (pair? x) (eq? (car x) '+)))
@@ -84,10 +84,9 @@
 
 ;; testes
 
-(trace deriv)
+; (trace deriv)
 
 (deriv '(** x (+ x y)) 'x)
 (deriv '(+ x 3) 'x)
 (deriv '(* x y) 'x)
 (deriv '(* (* x y) (+ x 3)) 'x)
-
