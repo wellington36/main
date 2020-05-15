@@ -20,15 +20,14 @@
         (else
          `(+ ,a1 ,a2))))
 
-
 (define (addend s) (cadr s))
 
 (define (augend s)
    (accumulate make-sum 0 (cddr s)))
 
-
 (define (sum? x)
   (and (pair? x) (eq? (car x) '+)))
+
 
 (define (make-product m1 m2)
   (cond ((or (=number? m1 0) (=number? m2 0)) 0)
@@ -42,7 +41,6 @@
 
 (define (multiplicand p)
   (accumulate make-product 1 (cddr  p)))
-
 
 (define (product? x)
   (and (pair? x) (eq? (car x) '*)))
@@ -90,11 +88,8 @@
 
 ;; testes
 
-
-
 (deriv '(** x (+ x y)) 'x)
 (deriv '(+ x 3) 'x)
 (deriv '(* x y) 'x)
-(deriv '(* (* x y) (+ x 3)) 'x)
 (deriv '(* x y (+ x 3)) 'x)
-(deriv '(* x y (+ x (* 2 x) 3)) 'x)
+(deriv '(* x y (+ x (* 2 4 x) 3)) 'x)
