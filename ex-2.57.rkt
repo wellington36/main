@@ -1,6 +1,6 @@
 #lang racket
 
-; (require racket/trace)
+(require "interfaces.rkt")
 
 (define (variable? x)
   (symbol? x))
@@ -20,12 +20,14 @@
         (else
          `(+ ,a1 ,a2))))
 
-(define (addend s) (cadr s)) 
+(define (addend s) (cadr s))
 
-(define (augend s) (caddr s)) 
+(define (augend s)
+   (accumulate make-sum 0 (cddr s)))
 
 (define (sum? x)
   (and (pair? x) (eq? (car x) '+)))
+
 
 (define (make-product m1 m2)
   (cond ((or (=number? m1 0) (=number? m2 0)) 0)
@@ -37,7 +39,8 @@
 
 (define (multiplier p) (cadr p))
 
-(define (multiplicand p) (caddr p))
+(define (multiplicand p)
+  (accumulate make-product 1 (cddr  p)))
 
 (define (product? x)
   (and (pair? x) (eq? (car x) '*)))
@@ -69,7 +72,7 @@
            (make-product (multiplier exp)
                          (deriv (multiplicand exp) var))
            (make-product (deriv (multiplier exp) var)
-                         (multiplicand exp)))) 
+                         (multiplicand exp))))
 	((exponentiation? exp)
 	 (make-product
 	   (make-product
@@ -82,11 +85,11 @@
          (error "unknown expression type -- DERIV" exp))))
 
 
-;; testes
 
-; (trace deriv)
+;; testes
 
 (deriv '(** x (+ x y)) 'x)
 (deriv '(+ x 3) 'x)
 (deriv '(* x y) 'x)
-(deriv '(* (* x y) (+ x 3)) 'x)
+(deriv '(* x y (+ x 3)) 'x)
+(deriv '(* x y (+ x (* 2 4 x) 3)) 'x)

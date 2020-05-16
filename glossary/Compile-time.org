@@ -1,6 +1,10 @@
 * Compile time (Estágio de compilação)
 
-É o estágio de avaliação do programa quando os módulos necessários são importados e as macros são expandidas, 
-resultando em um programa totalmente expandido. O estágio de compilação acontece antes do estágio de execução (run time).
+É o estágio de avaliação do programa quando os módulos necessários são
+importados e as macros são expandidas, resultando em um programa
+totalmente expandido. O estágio de compilação acontece antes do
+estágio de execução (run time).
 
-Fonte:  -https://beautifulracket.com/appendix/glossary.html
+Fonte: 
+
+- https://beautifulracket.com/appendix/glossary.html

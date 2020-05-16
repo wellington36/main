@@ -1,0 +1,10 @@
+* primitive functions (Funções Primitivas)
+
+São procedimentos "embrulhados" a síntese da linguagem, isto é,
+funções que não foram implementadas pelo usuário da linguagem,
+previamente disponíveis para criar outras funções.
+
+Fonte:  
+
+- stackoverflow.com
+- Sicp

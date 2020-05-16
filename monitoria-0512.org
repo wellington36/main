@@ -20,6 +20,6 @@
 
 * arquivos
 
-- ex-2.58-m.rkt
-- remove-at-m.rkt
+- ex-2.58.rkt
+- L99-P23.rkt
 
