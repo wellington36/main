@@ -64,7 +64,10 @@
 (define tree5 '(7 (3 (1 () ()) (5 () ())) (9 () (11 () ()))))
 
 
-(map (lambda (v)
-       (list v (tree->list-1 v) (tree->list-2 v)))
-     (list tree4 tree3 tree2 tree5))
+(define (test)
+  (map (lambda (v) (list v (tree->list-1 (eval v)) (tree->list-2 (eval v))))
+       '(tree4 tree3 tree2 tree5)))
+
+
+
 
