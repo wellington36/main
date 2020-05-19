@@ -1,9 +1,12 @@
 #lang racket
 
+(require rackunit)
 (require "table.rkt")
-(require "utils.rkt")
+
 
 ;; algumas funções necessarias
+
+(define (square v) (make-product v v))
 
 (define (variable? x) (symbol? x))
 
@@ -18,6 +21,7 @@
         ((=number? a2 0) a1)
         ((and (number? a1) (number? a2)) (- a1 a2))
         (else (list '- a1 a2))))
+
 
 ;; sum
 
@@ -43,12 +47,14 @@
         ((and (number? m1) (number? m2)) (* m1 m2))
         (else (list '* m1 m2))))
 
-(define (product? x)
-  (and (pair? x) (eq? (car x) '*)))
+(define (product? x) (and (pair? x) (eq? (car x) '*)))
 
 (define (multiplier p) (car p))
+
 (define (multiplicand p) (cadr p))
 
+
+;; nova implementação
 
 ;; main code
 
@@ -69,6 +75,7 @@
 ; já está definido em racket e variable? vem de symbol?
 ; que ja está definido no racket.
 
+
 ;; item B
 
 (define (deriv-sum exp var)
@@ -88,9 +95,14 @@
 
 ; testes
 
-(deriv '(+ x x) 'x)
-(deriv '(* x x) 'x)
-(deriv '(+ (* x y) (* x (* x y))) 'x)  
+(check-equal? (deriv '(+ x x) 'x) 2)
+
+(check-equal? (deriv '(* x x) 'x) '(+ x x))
+
+(check-equal? (deriv '(+ (* x y) (* x (* x y))) 'x)
+              '(+ y (+ (* x y) (* x y))))
+              
+
 
 ;; item C (farei derivada do quociente)
 
@@ -111,6 +123,62 @@
 
 (put 'deriv '/ deriv-quociente)
 
+; testes
+
+(check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
+
+(check-equal? (deriv '(/ 8 x) 'x)
+              '(/ -8 (* x x)))
+
+(check-equal? (deriv '(/ (+ y x) (* x x)) 'x)
+              '(/ (- (* x x) (* (+ y x) (+ x x)))
+                  (* (* x x) (* x x))))
+
+
+;; item C (derivada de exponenciação)
+
+(define (base e)
+  (car e))
+
+(define (exponent e)
+  (cadr e))
+
+(define (make-exponentiation base exp)
+  (cond ([=number? exp 0] 1)
+	([=number? exp 1] base)
+	([and (number? base) (number? exp)] (expt base exp))
+	(else `(** ,base ,exp))))
+
+(define (deriv-exponentiation exp var)
+	 (make-product
+	   (make-product
+	     (exponent exp)
+	     (make-exponentiation (base exp) (make-sum
+					       (exponent exp)
+					       -1)))
+	   (deriv (base exp) var)))
+
+(put 'deriv '** deriv-exponentiation)
+
+;testes
+
+(check-equal? (deriv '(** x 0) 'x) '0)
+
+(check-equal? (deriv '(** x 7) 'x) '(* 7 (** x 6)))
+
+(check-equal? (deriv '(** (+ x 4) 5) 'x) '(* 5 (** (+ x 4) 4)))
+
+
+
 
 ;; item D
+
 ; será nessesario alterar todos os put para que funcione.
+
+
+
+
+
+
+
+
