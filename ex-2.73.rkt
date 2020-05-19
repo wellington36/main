@@ -20,11 +20,23 @@
         ((and (number? a1) (number? a2)) (- a1 a2))
         (else (list '- a1 a2))))
 
+
+;; sum
+
 (define (make-sum a1 a2) 
   (cond ((=number? a1 0) a2)
         ((=number? a2 0) a1)
         ((and (number? a1) (number? a2)) (+ a1 a2))
         (else (list '+ a1 a2))))
+
+(define (sum? x)
+  (and (pair? x) (eq? (car x) '+)))
+
+(define (addend s) (car s))
+(define (augend s) (cadr s))
+
+
+;; product
 
 (define (make-product m1 m2) 
   (cond ((or (=number? m1 0) (=number? m2 0)) 0)
@@ -33,18 +45,13 @@
         ((and (number? m1) (number? m2)) (* m1 m2))
         (else (list '* m1 m2))))
 
-(define (sum? x) (and (pair? x) (eq? (car x) '+)))
 
-(define (addend s) (car s))
 
 (define (product? x) (and (pair? x) (eq? (car x) '*)))
 
 (define (multiplier p) (car p))
 
 (define (multiplicand p) (cadr p))
-
-(define (augend s) (cadr s))
-
 
 
 ;(define (deriv exp var)
@@ -67,13 +74,18 @@
 
 ;; nova inprementação
 
+
+;; main code
+
 (define (deriv exp var)
   (cond ((number? exp) 0)
         ((variable? exp) (if (same-variable? exp var) 1 0))
         (else ((get 'deriv (operator exp))
                (operands exp) var))))
+
 (define (operator exp) (car exp))
 (define (operands exp) (cdr exp))
+
 
 ;; item A
 
@@ -106,7 +118,8 @@
 (deriv '(* x x) 'x)
 ; '(+ x x)
 (deriv '(+ (* x y) (* x (* x y))) 'x)  
-; '(+ y (+ (* x y) (* x y)))
+; '(+ y (+ (* x y) (* x y)
+
 
 ;; item C (farei derivada do quociente)
 
@@ -126,6 +139,7 @@
    (square (denominador exp))))
 
 (put 'deriv '/ deriv-quociente)
+
 
 ; testes
 

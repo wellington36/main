@@ -12,3 +12,5 @@
                (cons (element-at alist rpos) selected)))))
   (aux alist empty))
 
+
+(provide rnd-select)

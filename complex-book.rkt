@@ -45,7 +45,8 @@
   (define (make-from-real-imag x y) 
     (cons (sqrt (+ (square x) (square y)))
           (atan y x)))
-  
+
+
   ;; interface to the rest of the system
   (define (tag x) (attach-tag 'polar x))
   (put 'real-part '(polar) real-part)
