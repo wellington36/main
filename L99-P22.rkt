@@ -4,7 +4,6 @@
 ;; If first argument is smaller than second, produce a list
 ;; in decreasing order.
 
-
 (define (range a b)
   (cond ((= a b) (cons a empty))
         ((< a b)
