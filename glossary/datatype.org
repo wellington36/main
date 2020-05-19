@@ -1,0 +1,3 @@
+É um conjunto de objetos que possuem estruturas similares, onde um objeto de determinado "data type" pertence à esse conjunto. Funções geralmente são implementadas para receber determinados tipos de dados e retornar determinados tipos de dados.
+
+Fonte: https://www.gnu.org/software/emacs/manual/html_node/elisp/Lisp-Data-Types.html

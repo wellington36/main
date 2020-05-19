@@ -1,0 +1,5 @@
+Formal parameters (parâmetros formais)
+
+Um parâmetro formal está subordinado a um procedimento da mesma forma que uma variável muda em relação a uma função, ou seja, é o nome usado no corpo do procedimento para se referir aos seus argumentos. Dessa forma, o parâmetro formal em si não é avaliado, sendo utilizado apenas para definir como um procedimento opera. Por exemplo, 'x' é o parâmetro formal na definição do procedimento 'f': (define (f x) (+ x 1)). Vale ressaltar que um mesmo procedimento pode ser definido para ser operado sobre vários parâmetros formais e que um mesmo símbolo pode ser atribuído como parâmetro formal para vários procedimentos sem que haja conflito entre eles.
+
+Fonte: SICP.

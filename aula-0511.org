@@ -1,0 +1,40 @@
+#+Title: aula 11 de maio de 2020
+
+* aula
+
+One particular scheme for doing this is called the Huffman encoding
+method, after its *discoverer*, David Huffman.
+
+Descobriu vs Inventou? Este vídeo faz um comentário sobre isso:
+https://www.youtube.com/watch?v=IOiZatlZtGU&t=2174s
+
+separate the task of designing a program that uses rational numbers
+from the task of implementing rational numbers in terms of the
+computer language's primitive mechanisms for constructing compound
+data.
+
+sistema pode precisar lidar com mais de uma representação. Exemplo de
+números complexos: retangular (parte real e imaginária) vs polar
+(magnitude e ângulo).
+
+requerimentos mudam; barreiras entre decisõs de design. mudanças e
+funcionalidades devem ser implementadas de forma aditiva, isto é, sem
+quebrar funcionalidades do sistema.
+
+- type tags
+- data-directed programming
+
+Figura 2.19
+
+dispatching on type ~> identificar tipos e funções adequadas. Como
+lidar com evolução do sistema? Diferentes implementações devem
+concordar com nomes.
+
+* files
+
+- tag-system.rkt
+- utils.rkt
+- complex-alyssa.rkt
+- complex-ben.rkt
+- complex-impl.rkt
+- complex.rkt

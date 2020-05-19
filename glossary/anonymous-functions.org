@@ -1,0 +1,15 @@
+* Anonymous Functions (Funções Anônimas)
+
+Uma função é dita "anônima" se não foi nomeada. O conceito de função anônima 
+surgiu com a formulação do Lambda Cálculo, por Alonzo Church, como um método 
+para formalizar o estudo de computações. Nas linguagens de programação (especialmente 
+as funcionais), funções anônimas são empregadas para simplificar a sintaxe de 
+um programa, pois permitem que o programador utilize funções auxiliares (que
+não têm muita relevância e são necessárias apenas em situações específicas)
+sem ter que nomear cada uma separadamente.
+
+Fonte:
+
+-https://en.wikipedia.org/wiki/Lambda_calculus
+-https://en.wikipedia.org/wiki/Anonymous_function
+-SICP subseção 1.3.2.

@@ -1,0 +1,24 @@
+\documentclass{scrartcl}
+
+\usepackage{mhchem}
+\usepackage[postpunc={dot},nostyles,stylemods={tree}]{glossaries-extra}
+
+\glsaddstoragekey{group}{}{\grouplabel}
+\glsxtrsetgrouptitle{greek}{Greek Symbols}
+
+\GlsXtrLoadResources[
+ src={glossario},
+ selection={all}
+]
+
+\begin{document}
+
+\printunsrtglossary[style={indexgroup}]
+ 
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

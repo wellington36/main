@@ -1,0 +1,51 @@
+#+Title: aula 24 abril de 2020
+
+Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html
+
+* revisão
+
+1. map over lists
+
+* aula
+
+1. árvores: estruturas hierarquicas
+
+#+BEGIN_SRC racket
+(define (count-leaves x)
+  (cond ((null? x) 0)  
+        ((not (pair? x)) 1)
+        (else (+ (count-leaves (car x))
+                 (count-leaves (cdr x))))))
+#+END_SRC
+
+2. Ex 2.24, 2.25 (juntos)
+3. Ex 2.27, 2.28 (grupos)
+4. Ex 2.29 (casa)
+
+5. mapping over trees 
+
+#+BEGIN_SRC racket
+(define (scale-tree tree factor)
+  (cond ((null? tree) nil)
+        ((not (pair? tree)) (* tree factor))
+        (else (cons (scale-tree (car tree) factor)
+                    (scale-tree (cdr tree) factor)))))
+
+(define (scale-tree tree factor)
+  (map (lambda (sub-tree)
+         (if (pair? sub-tree)
+             (scale-tree sub-tree factor)
+             (* sub-tree factor)))
+       tree))
+#+END_SRC
+
+6. Ex 2.30 (typo, juntos)
+7. Ex 2.31 (juntos)
+8. Ex 2.32 (subsets). Se conseguir, depois tentar implementar algo que
+   ao receber estrutura com repetições não produza repetições.
+
+* files
+
+- file:cars-cdrs.rkt
+- file:square-tree.rkt
+- file:tree-map.rkt

@@ -1,0 +1,5 @@
+* Iteration (Iteração)
+
+Iteração é uma forma de realizar procedimentos recursivos, na qual cria-se um programa utilizando-se de uma quantidade fixa de variáveis de estado e uma regra que indica como elas devem ser modificadas até que se alcance um estágio desejado, no qual o processo é terminado. Diferentemente de um processo de recurssão linear, um processo iterativo ocupa uma quantidade constante de memória para armazenar as informações necessárias a avaliação, uma vez que a mesma regra é repetida várias vezes.
+
+Fonte: Structure and Interpretation of Computer Programs; subseção 1.2.1.

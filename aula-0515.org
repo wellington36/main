@@ -1,0 +1,12 @@
+#+Title: aula 15 de maio de 2020
+
+* revisão
+
+- o que vimos até agora
+
+* aula
+
+- Ex 2.57
+- Ex 2.63
+
+- código seção 2.4 usando o `table.rkt`

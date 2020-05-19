@@ -1,0 +1,26 @@
+#+Title: aula 06 de maio de 2020
+
+* revisão
+
+* aula
+
+1. Informally, a set is simply a collection of distinct objects. To
+   give a more precise definition we can employ the method of data
+   abstraction. That is, we define ``set'' by specifying the
+   operations that are to be used on sets. These are union-set,
+   intersection-set, element-of-set?, and adjoin-set. (e footnote 37)
+
+2. repreentação vs complexidade operações. Sets como listas não
+   ordenadas com e sem repetição.
+
+3. sets como listas ordenadas. complexidade de pior/melhor/average
+   casos.
+
+4. intersection-set e o caso do projeto que apresentei!
+
+5. Ex 2.59
+
+6. Ex 2.60 (casa)
+
+7. Lembram do código [[https://github.com/cpdoc/dhbb-nlp/blob/master/primeiras_frases/add-file.lisp][add-file.lisp]]? Quais erros cometi? se eu tivesse
+   usado as operações sobre conjuntos?

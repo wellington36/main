@@ -1,0 +1,6 @@
+* Element (elemento)
+
+Em Racket, elementos são basicamente formas fechadas que ao serem interpretadas, terão um retorno e esse só dependerá do conteúdo do próprio elemento. Assim podemos concluir que valores, operadores e listas serão elementos. (Elementos podem ser: passados como argumento, listados numa lista, usados numa expressão e etc.) 
+
+Fonte:
+- livro SICP

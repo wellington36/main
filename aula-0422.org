@@ -1,0 +1,45 @@
+#+Title: aula 22 abril de 2020
+
+Link https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-15.html
+
+* revisão
+
+- discussão glossário
+
+- lista de exercícios 3
+  https://classroom.github.com/a/X0WU_cHp
+
+- Ex 2.19
+- Ex 2.20
+  
+* aula
+
+1. map over lists
+
+#+BEGIN_SRC racket
+(define (scale-list items factor)
+  (if (null? items)
+      nil
+      (cons (* (car items) factor)
+            (scale-list (cdr items) factor))))
+
+(define (map proc items)
+  (if (null? items)
+      nil
+      (cons (proc (car items))
+            (map proc (cdr items)))))
+
+(define (scale-list items factor)
+  (map (lambda (x) (* x factor))
+       items))
+#+END_SRC
+
+Veja file::aula-0422.rkt
+
+
+2. Ex 2.21
+
+3. Ex 2.22
+
+4. Ex 2.23 (vide file::for-each.rkt)
+

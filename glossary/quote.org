@@ -1,0 +1,7 @@
+* Quote
+
+Em Racket, trata-se de uma forma de "reestruturar" a informação de um elemento para que ele tenha um retorno com o conteúdo igual ao dele próprio sem passar por avaliação. (Em Racket, essa reestruturação pode ser ser feita rapidamente a partir do operador 'quote' que ao receber um elemento, retorna a versão reestruturada referente a ele)
+
+Fontes:
+- https://docs.racket-lang.org/guide/quote.html
+- livro SICP

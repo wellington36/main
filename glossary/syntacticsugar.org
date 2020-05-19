@@ -1,0 +1,7 @@
+ 
+* Syntactic Sugar (Açúcar Sintático)
+
+Um açúcar sintático é uma sintaxe dentro da linguagem de programação
+que tem por finalidade tornar suas construções mais fáceis de serem lidas, escritas ou compreendidas. Atente-se, contudo, ao fato de que um açúcar
+sintático não altera a expressividade nem a funcionalidade de uma
+linguagem.

@@ -1,0 +1,15 @@
+#+Title: aula 30 abril de 2020
+
+* revisão
+
+Soluções 2.34, 2.37, 2.38, 2.39?
+
+* aula
+
+Exemplo projeto DHBB e a biblioteca cl-conllu
+
+* files
+
+https://github.com/cpdoc/dhbb-nlp/tree/master/primeiras_frases
+
+
