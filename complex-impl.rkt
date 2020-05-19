@@ -3,7 +3,6 @@
 ;; provide the put and get
 (require "table.rkt")
 
-(require "utils.rkt")
 (require "tag-system.rkt")
 
 (require "complex-ben.rkt")

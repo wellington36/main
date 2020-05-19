@@ -21,11 +21,13 @@
 
 ;; test
 
-(let ((ac (make-from-real-imag 21 2)))
-  (add-complex (mul-complex ac ac)
-               (add-complex ac ac))
+(let ((ac (make-from-real-imag 22 3)))
+  (list ac
+        (add-complex (mul-complex ac ac)
+                     (add-complex ac ac))
 
-  (div-complex (mul-complex ac ac)
-               (add-complex ac ac)))
+        (div-complex (mul-complex ac ac)
+                     (add-complex ac ac))))
+
 
 
