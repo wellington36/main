@@ -1,0 +1,4 @@
+* Directory (diretório)
+
+Diretório é uma estrutura usada para organizar arquivos em um computador ou um arquivo que contém referência a outros arquivos. Essa estrutura de diretórios se parece com uma árvore.
+

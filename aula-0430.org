@@ -2,12 +2,14 @@
 
 * revisão
 
-Soluções 2.38, 2.39, 2.34, 2.37?
+Soluções 2.34, 2.37, 2.38, 2.39?
 
 * aula
 
-1. Exemplo projeto DHBB e a biblioteca cl-conllu
+Exemplo projeto DHBB e a biblioteca cl-conllu
 
 * files
+
+https://github.com/cpdoc/dhbb-nlp/tree/master/primeiras_frases
 
 

@@ -1,0 +1,7 @@
+Arguments (Argumentos)
+
+Variáveis que possuiem informações de valor, posição e palavra-chave, 
+a qual serão usasdas pelas funções e pelos operadores da linguagem.
+
+Fonte:  doc.racket-lang.org
+ 

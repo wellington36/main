@@ -1,0 +1,45 @@
+#+Title: aula 08 de maio de 2020
+
+* revisão
+
+1. exercicio 2.60? Discussões?
+
+2. discussão sobre union usando append (e discussão sobre append):
+
+#+BEGIN_SRC racket
+(define (union set1 set2)
+  (if (empty? set1) set2
+      (union (cdr set1) (adjoin-set (car set1) set2))))
+
+(define (union set1 set2)
+  (append set1 set2))
+#+END_SRC
+
+* aula
+
+1. sets as binary trees
+
+   1. other data structures 
+
+   2. ex 2.61 e 2.62
+
+   3. sets as binary tree
+
+   4. One particular scheme for doing this is called the Huffman
+      encoding method, after its discoverer, David Huffman.
+
+      https://www.youtube.com/watch?v=IOiZatlZtGU&t=2174s
+
+2. huffman encoding ou outro exemplo!
+
+3. projeto / lista
+
+   1. human encoding
+
+   2. comparacao real dos sets
+
+   3. grammar PAIP
+
+   4. exercicios 
+
+

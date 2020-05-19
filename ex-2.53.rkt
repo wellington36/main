@@ -1,6 +1,6 @@
 #lang racket
 
-;(1 3 (5 7) 9)
+; (1 3 (5 7) 9)
 (car (cdr (car (cdr (cdr '(1 3 (5 7) 9))))))
 (car (cdaddr '(1 3 (5 7) 9)))
 

@@ -1,0 +1,13 @@
+* abstractions (Abstrações)
+ 
+Abstração, é um instrumento pelo qual elementos compostos podem ser
+nomeados e manipulados como unidades. Em geral, objetos computacionais
+podem ter estruturas muito complexas e seria extremamente
+inconveniente ter que lembrar e repetir seus detalhes cada vez que
+querermos utilizar-los. De fato, programas complexos são escritos
+passo a passo por meio de abstrações sucessivas.
+
+* Fonte 
+
+- https://youtu.be/2Op3QLzMgSY
+- SICP Book

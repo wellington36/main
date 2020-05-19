@@ -34,10 +34,6 @@ receber estrutura com repetições não produza repetições.
 
 8. nested mappings (nested loops)
 
-   ver codigo
-
-9. Exemplos projeto DHBB
-
 * files
 
 - file:nested-mappings.rkt

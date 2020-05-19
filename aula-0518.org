@@ -1,0 +1,28 @@
+#+Title: aula 18 de maio de 2020
+
+* revisão
+
+1. dúvidas sobre código de números complexos.
+2. arquivos com soluções para os `99 problems`.
+
+* aula
+
+- Ex 2.64 (casa)
+- Ex 2.73
+
+- message passing
+
+  - section 2.1.3, where we saw how cons, car, and cdr could be
+    defined with no data objects but only procedures.
+
+  - one argument?
+
+- Ex 2.75
+- Ex 2.76
+
+- Next: Now we will see how to use this same idea not only to define
+  operations that are generic over different representations but also
+  to define operations that are generic over different kinds of
+  arguments.
+
+  - aritmética: complex, racionais, nat (ordinal)
