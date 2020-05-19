@@ -1,32 +1,9 @@
 #lang racket
 
-;; table
+(require "table.rkt")
+(require "utils.rkt")
 
-(define table (make-hash))
-
-(define (start)
-  (set! table (make-hash)))
-
-(define (put op type item)
-  (if (hash-has-key? table op)
-      (hash-set! (hash-ref table op) type item)
-      (hash-set! table op (make-hash (list (cons type item))))))
-
-(define (get op type)
-  (if (hash-has-key? table op)
-      (let ((tbo (hash-ref table op)))
-        (if (hash-has-key? tbo type)
-            (hash-ref tbo type)
-            empty))
-      empty))
-
-(define (show)
-  table)
-
-
-;; Algumas funções necessarias:
-
-(define (square v) (* v v))
+;; algumas funções necessarias
 
 (define (variable? x) (symbol? x))
 
@@ -94,6 +71,7 @@
         ((variable? exp) (if (same-variable? exp var) 1 0))
         (else ((get 'deriv (operator exp))
                (operands exp) var))))
+
 (define (operator exp) (car exp))
 (define (operands exp) (cdr exp))
 
@@ -149,8 +127,6 @@
 
 (put 'deriv '/ deriv-quociente)
 
+
 ;; item D
-
 ; será nessesario alterar todos os put para que funcione.
-
-
