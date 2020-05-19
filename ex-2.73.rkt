@@ -1,8 +1,10 @@
 #lang racket
 
+(require rackunit)
 (require "table.rkt")
 
-;; Algumas funções necessarias:
+
+;; algumas funções necessarias
 
 (define (square v) (make-product v v))
 
@@ -45,8 +47,6 @@
         ((and (number? m1) (number? m2)) (* m1 m2))
         (else (list '* m1 m2))))
 
-
-
 (define (product? x) (and (pair? x) (eq? (car x) '*)))
 
 (define (multiplier p) (car p))
@@ -54,26 +54,7 @@
 (define (multiplicand p) (cadr p))
 
 
-;(define (deriv exp var)
-;  (cond ((number? exp) 0)
-;        ((variable? exp)
-;         (if (same-variable? exp var) 1 0))
-;        ((sum? exp)
-;         (make-sum (deriv (addend exp) var)
-;                   (deriv (augend exp) var)))
-;        ((product? exp)
-;         (make-sum (make-product
-;                    (multiplier exp)
-;                    (deriv (multiplicand exp) var))
-;                   (make-product
-;                    (deriv (multiplier exp) var)
-;                    (multiplicand exp))))
-;        ;⟨more rules can be added here⟩
-;        (else (error "unknown expression type:
-;                     DERIV" exp))))
-
 ;; nova inprementação
-
 
 ;; main code
 
@@ -94,6 +75,7 @@
 ; já está definido em racket e variable? vem de symbol?
 ; que ja está definido no racket.
 
+
 ;; item B
 
 (define (deriv-sum exp var)
@@ -113,12 +95,13 @@
 
 ; testes
 
-(deriv '(+ x x) 'x)
-; 2
-(deriv '(* x x) 'x)
-; '(+ x x)
-(deriv '(+ (* x y) (* x (* x y))) 'x)  
-; '(+ y (+ (* x y) (* x y)
+(check-equal? (deriv '(+ x x) 'x) 2)
+
+(check-equal? (deriv '(* x x) 'x) '(+ x x))
+
+(check-equal? (deriv '(+ (* x y) (* x (* x y))) 'x)
+              '(+ y (+ (* x y) (* x y))))
+              
 
 
 ;; item C (farei derivada do quociente)
@@ -140,19 +123,18 @@
 
 (put 'deriv '/ deriv-quociente)
 
-
 ; testes
 
-(deriv '(/ x 8) 'x)
-;'(/ 8 64)
-(deriv '(/ 8 x) 'x)
-; '(/ -8 (* x x))
-(deriv '(/ (+ y x) (* x x)) 'x)
-; '(/ (- (* x x) (* (+ y x) (+ x x))) (* (* x x) (* x x)))
+(check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
+
+(check-equal? (deriv '(/ 8 x) 'x)
+              '(/ -8 (* x x)))
+
+(check-equal? (deriv '(/ (+ y x) (* x x)) 'x)
+              '(/ (- (* x x) (* (+ y x) (+ x x)))
+                  (* (* x x) (* x x))))
 
 
 ;; item D
 
 ; será nessesario alterar todos os put para que funcione.
-
-
