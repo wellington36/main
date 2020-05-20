@@ -1,6 +1,14 @@
 #lang racket
 
-;Drop every N'th element from a list 
+#|
+
+Drop every N'th element from a list.
+
+Example:
+* (drop '(a b c d e f g h i k) 3)
+(A B D E G H K)
+
+|#
 
 (define (drop a-list n)
   (define (drop-aux a-list r-list n)
@@ -12,3 +20,6 @@
   (drop-aux a-list '() n))
 
 (provide drop)
+
+
+(drop '(a b c d e f g h i k) 3)
