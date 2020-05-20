@@ -1,0 +1,12 @@
+* Order of Growth (Ordem de Crescimento)
+
+Os processos podem diferir consideravelmente nas taxas em que eles
+consomem recursos computacionais : memória e tempo de processamento.
+Uma maneira conveniente de descrever a diferença desse consumo é usar
+a noção de ordem de crescimento para obter uma estimativa dos recursos
+requeridos por um processo à medida que as entradas se tornam maiores
+
+Fonte:
+
+SICP, seção 1.2.3 https://sicp.comp.nus.edu.sg/sicpjs.pdf
+

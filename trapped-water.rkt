@@ -1,6 +1,8 @@
 #lang racket
 
-(define (lst-sect lis a b) ;recebe uma lista e devolve a secção da lista no intervalo das posições a e b
+; recebe uma lista e devolve a secção da lista no intervalo das
+; posições a e b
+(define (lst-sect lis a b) 
   (define (aux lis p q) (if (> p 0)
                             (aux (cdr lis) (- p 1) q)
                             (if (> q 0)
@@ -9,26 +11,37 @@
   
   (aux lis a (+ (- b a) 1)))
 
-(define (maxlst lst) ;recebe uma lista de números e devolve o maior elemento
+; recebe uma lista de números e devolve o maior elemento
+(define (maxlst lst) 
   (if (empty? (cdr lst))
       (car lst)
       (if (> (car lst) (cadr lst))
           (maxlst (cons (car lst) (cddr lst)))
           (maxlst (cdr lst)))))
 
-;;Barreiras são as maiores alturas que estão entre um determinado elemento e o início ou o final da lista.
-;;Havendo assim a necessidade de que ambas as barreiras (esquerda e a direita) sejam maiores que o elemento para ocorrer acúmulo de água nele.
 
-(define (after-rain array) ;recebe uma lista e devolve a lista pós-chuva
+;; Barreiras são as maiores alturas que estão entre um determinado
+;; elemento e o início ou o final da lista.  Havendo assim a
+;; necessidade de que ambas as barreiras (esquerda e a direita) sejam
+;; maiores que o elemento para ocorrer acúmulo de água nele.
 
-  (define (barriers x) ;recebe um posição de elemento da array e devolve as barreiras que o cercam
-    (cons (maxlst (lst-sect array 0 x)) (maxlst (lst-sect array x (- (length array) 1)))))
-  
-  (define (short-top x) ;recebe uma posição de elemento na array e devolve a menor das barreiras que o cercam
+; recebe uma lista e devolve a lista pós-chuva
+(define (after-rain array) 
+
+  ; recebe um posição de elemento da array e devolve as barreiras que
+  ; o cercam
+  (define (barriers x) 
+    (cons (maxlst (lst-sect array 0 x))
+          (maxlst (lst-sect array x (- (length array) 1)))))
+
+  ; recebe uma posição de elemento na array e devolve a menor das
+  ; barreiras que o cercam
+  (define (short-top x) 
     (let ([brs (barriers x)])
       (min (car brs) (cdr brs))))
 
-  (define (between-tops? x) ; responde se x está entre barreiras
+  ; responde se x está entre barreiras
+  (define (between-tops? x) 
     (> (short-top x) (list-ref array x)))
   
   (define (put-water x)
@@ -39,10 +52,11 @@
             array)))
   (put-water 0))
 
-(define (water-amount array) ;DEVOLVE A QUANTIDADE DE ÁGUA ARMAZENADA
+; devolve a quantidade de água armazenada
+(define (water-amount array) 
   (- (foldr + 0 (after-rain array)) (foldr + 0 array)))
 
-;;(water-amount '(2 3 1 2 4))
-;;(water-amount '(4 5 3 7 1 6 3))
+;; (water-amount '(2 3 1 2 4))
+;; (water-amount '(4 5 3 7 1 6 3))
 
 (provide maxlst)

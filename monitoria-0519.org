@@ -1,0 +1,383 @@
+#+Title: Monitoria 19/05/2020
+
+Manual Git / Github
+
+** Índice de comandos
+
+- Configurando:
+
+#+BEGIN_SRC bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@dominio.br"
+git config --global code.editor "nome do editor"
+#+END_SRC
+
+- Fazendo clone/commit:
+
+#+BEGIN_SRC bash
+git clone https://github.com/seuuser/seurepo.git
+
+# Edite seus arquivos
+
+git add <edited files>
+git commit
+
+git push origin master
+#+END_SRC
+
+Pode ser usado `git commit -m "Mensagem do commit"` para especificar a
+mensagem do commit.  O comando `git push` sozinho é o mesmo que `git
+push origin master`.
+
+- Feedback do que está acontecendo
+
+#+BEGIN_SRC bash
+git status
+git log
+gitk
+#+END_SRC
+
+Se usado `git log -n` ele vai mostrar os n últimos commits.
+
+- Atualizando o fork
+
+#+BEGIN_SRC bash
+git remote -v
+git remote add upstream https://github.com/deondefez/ofork.git
+
+git pull upstream master
+#+END_SRC
+
+O comando `git pull` executa `git fetch` depois `git merge`. Pode dar
+conflito de edições, resolva-os e faça o `git add` depois o `git
+commit`.
+
+- Operando branches
+
+#+BEGIN_SRC bash
+git checkout -b newbranch
+git checkout master
+git branch --list
+#+END_SRC
+
+- Criando um PR
+
+#+BEGIN_SRC bash
+git fetch
+git checkout upstream/master
+git checkout -b exercice-c
+
+# Faça suas mudanças
+
+git add <mudanças>
+git commit
+git push origin exercise-c
+#+END_SRC
+
+Depois disso crie o Pull Request no Github.
+
+** Configurando o Git no seu computador
+
+Antes de fazer qualquer commit, é preciso dizer ao Git o seu nome
+e email. Essas informações serão vinculadas ao commit, para que possa
+ser possível saber quem fez o commit.
+
+#+BEGIN_SRC bash
+git config --global user.name "Seu Nome"
+git config --global user.email "seuemail@dominio.br"
+#+END_SRC
+
+O Git define um editor de texto padrão para ser usado ao criar um
+commit.  O editor de texto padrão no linux é o
+[Nano](https://www.nano-editor.org/), e no GitBash para o Windows é o
+[Vim](https://www.vim.org/). Esse editor pode ser alterado inclusive
+para um editor fora do terminal.  No Linux o Nano é bem amigável e
+fácil de mexer, porém há opções como o Gedit e o Xed.  No Windows o
+Vim pode ser complicado no começo, mas é bem poderoso ao ser
+dominado. Uma opção é o Notepad.
+
+#+BEGIN_SRC bash
+git config --global code.editor "nome do editor"
+#+END_SRC
+
+Pode ser que precise colocar o nome do editor em letra minúscula. Você
+pode testar se o editor está funcionando com `git config --global
+--edit`. Esse comando abre o editor com o arquivo de configurações do
+Git.
+
+** Fazendo o Fork
+
+Você precisa alterar ou adicionar algum arquivo em um repositório que
+você não tem autorização de escrita. Para isso você precisa criar o
+chamado "fork".  Ao entrar em um repositório do Github e clicar em
+"Fork", o Github irá criar um novo repositório que será uma cópia do
+repositório em que o fork foi feito.  A diferença será que nesse novo
+repositório você tem permissão de modificar os arquivos.
+
+Depois que seu fork foi criado, você pode acessá-lo na sua lista de
+repositórios do Github. Vamos ver como clonar esse repositório para
+sua máquina para então fazer as alterações necessárias.
+
+No seu repositório vai ter uma opção verde com o nome "Clone or
+download".  Ao clicar nela ele vai mostrar um link parecido com
+`https://github.com/seuuser/seurepo.git`.  Esse é o link que o Git vai
+usar para acessar seu repositório no Github.  Vamos fazer o clone dele
+para sua máquina:
+
+#+BEGIN_SRC bash
+git clone https://github.com/seuuser/seurepo.git
+#+END_SRC
+
+Na saída você deve ver algo como:
+
+#+BEGIN_SRC bash
+Cloning into 'seurepo'...
+remote: Enumerating objects: 37, done.
+remote: Counting objects: 100% (37/37), done.
+remote: Compressing objects: 100% (31/31), done.
+remote: Total 37 (delta 16), reused 16 (delta 6), pack-reused 0
+Unpacking objects: 100% (37/37), done.
+#+END_SRC
+
+Ótimo, agora que você fez uma cópia do seu repositório no servidor do
+Github para a sua máquina local, pode editar os arquivos à vontade. Os
+arquivos vão estar na pasta com mesmo nome de seu repositório, no meu
+caso vão estar em `seurepo`. Para trabalhar nele vou precisar alterar
+meu diretório de trabalho para lá com `cd seurepo`.
+
+Como o Git é baseado em Commits, precisamos criar um commit com minhas
+mudanças. Vamos supor que eu editei os arquivos `a.rkt` e `b.rkt` (se
+você usar o comando `git status`, ele vai mostrar quais arquivos
+mudaram). Eu resolvi criar dois commits, um com as mudanças de `a.rkt`
+e outro com as mudanças de `b.rkt`. Vamos para o primeiro commit:
+
+#+BEGIN_SRC bash
+git add a.txt
+git commit
+#+END_SRC
+
+Ótimo, o editor de texto irá abrir, eu escrevo minha mensagem e saio.
+Se eu fizer `git status` eu vou posso ver que apenas a mudança de
+`b.rkt` precisa ser commitada.
+
+Vamos criar outro commit com `b.rkt`:
+
+#+BEGIN_SRC bash
+git add b.txt
+git commit
+#+END_SRC
+
+Não esqueça de descrever bem as mudanças que você fez na mensagem do
+commit, lembre-se que outras pessoas vão lê-las. O git tem algumas
+boas ferramentas para saber o que está acontecendo no seu repositório.
+Uma delas é o já conhecido `git status`, mas existe o `git log` que
+lista os últimos commits, e o `gitk`, que mostra a árvore de commits
+em uma interface gráfica.
+
+Vamos ver os nossos dois últimos commits:
+
+#+BEGIN_SRC bash
+git log -2
+#+END_SRC
+
+Se formos no nosso repositório no Github veremos que nossos commits
+ainda não estão lá, isso porque o trabalho está todo sendo feito no
+meu computador. Vamos mandar o que a gente fez para o Github:
+
+#+BEGIN_SRC bash
+git push origin master
+#+END_SRC
+
+Ele vai pedir para você entrar com seu login e senha do Github. Se
+tudo der certo você vai poder ver suas mudanças no seu repositório do
+Github (se clicar na opção "Insights" depois em "Network" no seu
+repositório do Github ele mostra a árvore de commits assim como o
+Gitk).
+
+Veremos agora o porquê de escrever `origin` e `master` depois do `git
+pull`.
+
+** Atualizando seu Fork
+
+Como já vimos, estamos trabalhando com três repositórios diferentes, o
+repositório principal no Github, de onde você fez o fork, o seu fork
+no Github, e o seu clone no seu computador. Até agora todo o nosso
+trabalho foi feito entre o clone e o fork, porém o que acontece se o
+repositório principal for alterado por outra pessoa? Precisamos trazer
+essa alteração para nosso fork.
+
+Aí é que entra o `git remote`. Ele que define quais são os
+repositórios remotos que você está utilizando.
+
+Rode o seguinte comando:
+
+#+BEGIN_SRC bash
+git remote -v
+#+END_SRC
+
+Você verá algo como:
+
+#+BEGIN_SRC bash
+origin	https://github.com/seuuser/seurepo.git (fetch)
+origin	https://github.com/seuuser/seurepo.git (push)
+#+END_SRC
+
+Isso significa que a variável `origin` está definida como
+`https://github.com/seuuser/seurepo.git`. Isso porque ao fazer o
+clone, o Git define essa variável como sendo a origem do clone. Assim,
+ao fazer `git push origin master`, o push será feito para o `origin`,
+ou seja, será mandado para `https://github.com/seuuser/seurepo.git`.
+
+A mesma coisa com o pull, ao fazer `git pull origin master` nós
+pegamos as alterações que estão em `origin` e mandamos para nosso
+repositório local.  Mas e se quisermos pegar mudanças de outro
+repositório? Temos que adicionar uma nova variável no nosso remote:
+
+#+BEGIN_SRC bash
+git remote add upstream https://github.com/deondefez/ofork.git
+#+END_SRC
+
+Podemos verificar com `git remote -v`, a saída será:
+
+#+BEGIN_SRC bash
+origin	https://github.com/seuuser/seurepo.git (fetch)
+origin	https://github.com/seuuser/seurepo.git (push)
+upstream  https://github.com/deondefez/ofork.git (fetch)
+upstream  https://github.com/deondefez/ofork.git (push)
+#+END_SRC
+
+Eu resolvi chamá-la de `upstream`, mas pode ter sido chamada de
+qualquer nome (vamos manter `upstream` como padrão para forks). Agora
+eu posso pegar as mudanças em `https://github.com/deondefez/ofork.git`
+da seguinte maneira:
+
+#+BEGIN_SRC bash
+git pull upstream master
+#+END_SRC
+
+O Git irá pegar as mudanças que estão em `upstream` e mandar para meu
+repositório local. Porém isso pode dar conflitos se um mesmo arquivo
+for editado nos dois repositórios. Nesse caso o Git irá mostrar os
+arquivos que deram conflito de vermelho e irá pedir para que você
+resolva os problemas editando esses arquivos. Ao editá-los, basta
+criar o commit que conterá as mudanças feitas:
+
+#+BEGIN_SRC bash
+git add <nome dos arquivos>
+git commit
+#+END_SRC
+
+O pull foi feito do `upstream` para o repositório local, agora é
+preciso submeter essas mudanças para o `origin`. Para isso é preciso
+fazer:
+
+#+BEGIN_SRC bash
+git push origin master
+#+END_SRC
+
+Assim seu fork no Github e o repositório no seu computador estão
+atualizados com as mudanças em `master`.
+
+** Criando branches (ou ramos)
+
+Se o Git é uma árvore, é de se imaginar que ele tenha várias
+ramificações.  O Git chama os ramos de branches, isso é importante
+quando se quer dois commits partindo de um mesmo commit.
+
+O ramo padrão do Git é chamado de `master`.  Podemos criar um novo
+branch a partir do commit atual fazendo:
+
+#+BEGIN_SRC bash
+git checkout -b newbranch
+#+END_SRC
+
+Assim, ao fazer `git status`, em vez de estar escrito `No ramo
+master`, estará escrito `No ramo newbranch`. Agora todos os commits
+que fizermos irão para o `newbranch`, enquanto o `master` permanecerá
+intocado.
+
+O comando `git checkout` serve para mudar o branch em que estamos
+trabalhando.  Ao criar nossos commits, podemos voltar para o master
+com:
+
+#+BEGIN_SRC bash
+git checkout master
+#+END_SRC
+
+Agora se fizermos novos commits, eles serão criados em `master`,
+enquanto o `newbranch` continua lá com seus commits.
+
+Para mandar o nosso branch para nosso `origin` no GitHub, usaremos:
+
+#+BEGIN_SRC bash
+git push origin newbranch
+#+END_SRC
+
+Assim nosso repositório `origin` ganhará esse branch `newbranch`.
+Logo acima do código no Github tem uma opção "branch" que lista os
+branches no repositório.
+
+** Pull Requests (PR)
+
+Como não temos acesso de escrita ao repositório `upstream`, para
+podermos submeter nossas mudanças para esse repositório precisamos
+fazer um "Pull Request".
+
+Vamos supor que a gente queira adicionar o arquivo `c.rkt` no
+`upstream`.  Para isso precisaremos de criar um novo branch onde
+ficarão essas modificações.  Esse branch pode partir do seu branch
+`master`, ou partir do branch `master` do repositório
+`upstream`. Vamos fazê-lo sair do `master` do `upstream`, ou
+`upstream/master`.
+
+Para isso precisamos baixar todas as alterações feitas no `upstream`,
+porém sem alterar nosso repositório. Faremos isso com:
+
+#+BEGIN_SRC bash
+git fetch upstream
+#+END_SRC
+
+Com isso as mudanças em `upstream` estão registradas no meu
+computador.  Vamos agora mudar para o `upstream/master`
+
+#+BEGIN_SRC bash
+git checkout upstream/master
+#+END_SRC
+
+Agora a partir daqui criar nosso branch:
+
+#+BEGIN_SRC bash
+git checkout -b exercicio-c
+#+END_SRC
+
+Agora que estamos no branch `exercicio-c`, podemos fazer nossas
+alterações em `c.rkt`.  Depois de prontas:
+
+#+BEGIN_SRC bash
+git add c.rkt
+git commit
+git push origin exercicio-c
+#+END_SRC
+
+Depois disso basta ir no Github e criar o Pull Request partindo do
+branch `exercicio-c`.  Lembrando que ao fazer alterações nesse branch
+elas serão atualizadas no PR.
+
+** Merge
+
+O comando `git merge` é bem parecido com o comando `git pull`, eles
+mesclam dois ramos diferentes.  A diferença é que antes de fazer a
+mesclagem, o comando `git pull` executa o `git fetch` para ver quais
+mudanças foram feitas nos repositórios `remote`.  Ou seja, o comando
+`git pull` faz duas operações, primeiro um `git fetch` depois um `git
+merge`.
+
+Se você está no brach `exercicio-c` e quer pegar as mudanças feitas em
+master, basta fazer:
+
+#+BEGIN_SRC bash
+git merge master
+#+END_SRC
+
+O comportamento será parecido com o `git pull`, inclusive quando for
+tratar os conlfitos.
