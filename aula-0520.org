@@ -1,7 +1,5 @@
 #+Title: aula 20 de maio de 2020
 
-* aula
-
 - Ex 2.64 
 
 - message passing
