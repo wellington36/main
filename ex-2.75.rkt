@@ -12,7 +12,11 @@
            (error "Unknown op -- MAKE-FROM-MAG-ANG" op))))
   dispatch)
 
-(check-equal? ((make-from-mag-ang 1 (/ pi 3)) 'real-part) (* 1 (cos (/ pi 3))))
-(check-equal? ((make-from-mag-ang 1 pi) 'magnitude) 1)
+
+(check-equal? ((make-from-mag-ang 1 (/ pi 3)) 'real-part)
+              (* 1 (cos (/ pi 3))))
+
+(check-equal? ((make-from-mag-ang 1 pi) 'magnitude)
+              1)
 
 (provide make-from-mag-ang)
