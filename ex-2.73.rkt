@@ -40,6 +40,8 @@
 
 ;; product
 
+(define (square v) (make-product v v))
+
 (define (make-product m1 m2) 
   (cond ((or (=number? m1 0) (=number? m2 0)) 0)
         ((=number? m1 1) m2)
@@ -54,7 +56,11 @@
 (define (multiplicand p) (cadr p))
 
 
+<<<<<<< HEAD
 ;; nova inprementação
+=======
+;; nova implementação
+>>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b
 
 ;; main code
 
@@ -125,7 +131,12 @@
 
 ; testes
 
+<<<<<<< HEAD
 (check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
+=======
+(check-equal? (deriv '(/ x 8) 'x)
+              '(/ 8 64))
+>>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b
 
 (check-equal? (deriv '(/ 8 x) 'x)
               '(/ -8 (* x x)))
@@ -134,7 +145,53 @@
               '(/ (- (* x x) (* (+ y x) (+ x x)))
                   (* (* x x) (* x x))))
 
+<<<<<<< HEAD
 
 ;; item D
 
 ; será nessesario alterar todos os put para que funcione.
+=======
+
+;; item C (derivada de exponenciação)
+
+(define (base e)
+  (car e))
+
+(define (exponent e)
+  (cadr e))
+
+(define (make-exponentiation base exp)
+  (cond ([=number? exp 0] 1)
+	([=number? exp 1] base)
+	([and (number? base) (number? exp)] (expt base exp))
+	(else `(** ,base ,exp))))
+
+(define (deriv-exponentiation exp var)
+	 (make-product
+	   (make-product
+	     (exponent exp)
+	     (make-exponentiation (base exp) (make-sum
+					       (exponent exp)
+					       -1)))
+	   (deriv (base exp) var)))
+
+(put 'deriv '** deriv-exponentiation)
+
+
+; testes
+
+(check-equal? (deriv '(** x 0) 'x)
+              0)
+
+(check-equal? (deriv '(** x 7) 'x)
+              '(* 7 (** x 6)))
+
+(check-equal? (deriv '(** (+ x 4) 5) 'x)
+              '(* 5 (** (+ x 4) 4)))
+
+
+;; item D
+
+; será nessesario alterar todos os put para que funcione.
+
+>>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b
