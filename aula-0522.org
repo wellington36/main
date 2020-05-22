@@ -1,0 +1,19 @@
+#+Title: aula 22 de maio de 2020
+
+- dúvidas sobre Lista 4?
+
+- pilhas (stack) e filas (queues)
+
+- Now we will see how to use this same idea not only to define
+  operations that are generic over different representations but also
+  to define operations that are generic over different kinds of
+  arguments.
+
+  - aritmética: complex, racionais, nat (ordinal)
+
+- https://www.twitch.tv/videos/627659597
+
+- Ex 2.77
+- Ex 2.78
+- Ex 2.79
+- Ex 2.80
