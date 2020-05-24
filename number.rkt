@@ -1,5 +1,6 @@
 #lang racket
 
+(require rackunit)
 (require "table.rkt")
 
 (put 'add '(scheme-number scheme-number) +)
@@ -16,7 +17,7 @@
 
 ;; test
 
-(require rackunit)
-
-(check-equal? (=zero? 10) false)
-(check-equal? (=zero? 0) true)
+(check-equal? (=zero? 10)
+              false)
+(check-equal? (=zero? 0)
+              true)

@@ -51,6 +51,7 @@
               #t)
 
 ;; interface to rest of the system
+
 (define (tag z) (attach-tag 'complex z))
 
 (put 'add '(complex complex)
@@ -78,7 +79,4 @@
 (put 'magnitude '(complex) magnitude)
 (put 'angle '(complex) angle)
 (put '=zero? '(complex) =zero?)
-
-
-
 

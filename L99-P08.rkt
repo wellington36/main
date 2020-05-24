@@ -1,9 +1,8 @@
 #lang racket 
 
-;Eliminate consecutive duplicates of list elements
+; eliminate consecutive duplicates of list elements
 
-
- (require rackunit)
+(require rackunit)
 
 (define (compress lst)
   (cond ((null? (cdr lst))
@@ -13,8 +12,7 @@
         (else (cons (car lst)
                     (compress (cdr lst))))))
 
+(provide compress)
 
-
- (provide compress)
-
-(check-equal? (compress '(a a a a b c c a a d e e e e)) '(a b c a d e))
+(check-equal? (compress '(a a a a b c c a a d e e e e))
+              '(a b c a d e))

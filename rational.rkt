@@ -60,14 +60,28 @@
 
 (put '=zero? '(rational) =zero?)
 
+
 ;; testes
 
-(check-equal? (add-rat (cons 2 3) (cons 1 3)) (cons 1 1))
-(check-equal? (sub-rat (cons 2 3) (cons 1 3)) (cons 1 3))
-(check-equal? (mul-rat (cons 2 3) (cons 1 3)) (cons 2 9))
-(check-equal? (div-rat (cons 2 3) (cons 1 3)) (cons 2 1))
-(check-equal? (make-rat 2 3) (cons 2 3))
-(check-equal? (equ? (cons 2 3) (cons 2 3)) #t)
-(check-equal? (=zero? (cons 0 9)) #t)
+(check-equal? (add-rat (make-rat 2 3) (make-rat 1 3))
+              (make-rat 1 1))
+
+(check-equal? (sub-rat (make-rat 2 3) (make-rat 1 3))
+              (make-rat 1 3))
+
+(check-equal? (mul-rat (make-rat 2 3) (make-rat 1 3))
+              (make-rat 2 9))
+
+(check-equal? (div-rat (make-rat 2 3) (make-rat 1 3))
+              (make-rat 2 1))
+
+(check-equal? (make-rat 2 3)
+              (make-rat 2 3))
+
+(check-equal? (equ? (make-rat 2 3) (make-rat 2 3))
+              #t)
+
+(check-equal? (=zero? (make-rat 0 9))
+              #t)
 
 
