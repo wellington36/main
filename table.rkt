@@ -2,7 +2,8 @@
 
 ;; https://docs.racket-lang.org/guide/hash-tables.html
 
-;--------------------------operations and types table---------------------------
+
+; --------------------------operations and types table---------------------------
 
 (define table (make-hash))
 
@@ -27,7 +28,7 @@
 
 (provide put get show start)
 
-;--------------------------------coercion table---------------------------------
+; --------------------------------coercion table---------------------------------
 
 (define coercion-table (make-hash))
 
@@ -50,6 +51,6 @@
 (define (show-coercion)
   coercion-table)
 
-(provide put-coercion get-coercion show-coercion show-coercion)
+(provide put-coercion get-coercion start-coercion show-coercion)
 
 

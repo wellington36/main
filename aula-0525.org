@@ -10,7 +10,6 @@
 - Ex 2.79
 - Ex 2.80
 
-
 * aula
 
 - motivação para `coerção` de tipos
