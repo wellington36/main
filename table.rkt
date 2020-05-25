@@ -51,6 +51,6 @@
 (define (show-coercion)
   coercion-table)
 
-(provide put-coercion get-coercion show-coercion show-coercion)
+(provide put-coercion get-coercion start-coercion show-coercion)
 
 
