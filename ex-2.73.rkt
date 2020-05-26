@@ -6,6 +6,8 @@
 
 ;; algumas funções necessarias
 
+(define (square v) (make-product v v))
+
 (define (variable? x) (symbol? x))
 
 (define (same-variable? v1 v2)
@@ -125,8 +127,12 @@
 
 ; testes
 
+
+(check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
+
 (check-equal? (deriv '(/ x 8) 'x)
               '(/ 8 64))
+
 
 (check-equal? (deriv '(/ 8 x) 'x)
               '(/ -8 (* x x)))
@@ -162,6 +168,16 @@
 (put 'deriv '** deriv-exponentiation)
 
 
+;testes
+
+(check-equal? (deriv '(** x 0) 'x) '0)
+
+(check-equal? (deriv '(** x 7) 'x) '(* 7 (** x 6)))
+
+(check-equal? (deriv '(** (+ x 4) 5) 'x) '(* 5 (** (+ x 4) 4)))
+
+
+
 ; testes
 
 (check-equal? (deriv '(** x 0) 'x)
@@ -174,7 +190,16 @@
               '(* 5 (** (+ x 4) 4)))
 
 
+
 ;; item D
 
 ; será nessesario alterar todos os put para que funcione.
+
+
+
+
+
+
+
+
 
