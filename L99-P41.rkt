@@ -3,22 +3,22 @@
 (require rackunit)
 (require "L99-P40-a.rkt")
 
-;Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach
-;composition.
+; Given a range of integers by its lower and upper limit, print a list
+; of all even numbers and their Goldbach composition.
 
 ;Example:
 ;(goldbach-list 9 20)
+; 10 = 3 + 7
+; 12 = 5 + 7
+; 14 = 3 + 11
+; 16 = 3 + 13
+; 18 = 5 + 13
+; 20 = 3 + 17
 
-;10 = 3 + 7
-;12 = 5 + 7
-;14 = 3 + 11
-;16 = 3 + 13
-;18 = 5 + 13
-;20 = 3 + 17
-
-; In most cases, if an even number is written as the sum of two prime numbers, one of them is very small.
-;Very rarely, the primes are both bigger than say 50. Try to find out how many such cases there are in the
-;range 2..3000.
+; In most cases, if an even number is written as the sum of two prime
+; numbers, one of them is very small.  Very rarely, the primes are
+; both bigger than say 50. Try to find out how many such cases there
+; are in the range 2..3000.
 
 ;Example (for a print limit of 50):
 ;(goldbach-list 1 2000 50)
@@ -48,9 +48,7 @@
                          (filter (lambda (x) (and (even? x) (> x 2)))
                                  (range x (+ (car y) 1)))))))
 
-(golbach-list 10 20)
+(golbach-list 10 20) 
 (golbach-list 1 2000 50)
 
 (provide golbach-list)
-
-
