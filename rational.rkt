@@ -30,7 +30,7 @@
   (make-rat (* (numer x) (denom y))
             (* (denom x) (numer y))))
 
-(define (equ? x y) ; ex-2.70
+(define (equ? x y) ; ex-2.79
   (=(* (numer x) (denom y))
     (* (denom x) (numer y))))
 
