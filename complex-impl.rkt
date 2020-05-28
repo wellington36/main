@@ -1,22 +1,8 @@
 #lang racket
 
 ;; provide the put and get
-(require "table.rkt")
 
-(require "tag-system.rkt")
-
-(require "complex-ben.rkt")
-(require "complex-alyssa.rkt")
-
-(define (apply-generic op . args)
-  (let ((type-tags (map type-tag args)))
-    (let ((proc (get op type-tags)))
-      (if proc
-          (apply proc (map contents args))
-          (error
-           "No method for these types -- APPLY-GENERIC"
-           (list op type-tags))))))
-
+(require "table.rkt" "tag-system.rkt" "complex-ben.rkt" "complex-alyssa.rkt")
 
 (define (real-part z) (apply-generic 'real-part z))
 (define (imag-part z) (apply-generic 'imag-part z))

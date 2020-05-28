@@ -1,6 +1,5 @@
 #lang racket
 
-(require "table.rkt")
-(require "tag-system.rkt")
+(require "table.rkt" "tag-system.rkt")
 
 ;; implementar aqui procedimentos de coerção

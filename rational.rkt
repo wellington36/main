@@ -1,7 +1,7 @@
 #lang racket
 
-(require "table.rkt")
-(require "ex-2.78.rkt")
+(require "table.rkt" "tag-system.rkt")
+
 (require rackunit)
 
 (define (numer x) (car x))
@@ -30,11 +30,11 @@
   (make-rat (* (numer x) (denom y))
             (* (denom x) (numer y))))
 
-(define (equ? x y)
+(define (equ? x y) ; ex-2.79
   (=(* (numer x) (denom y))
     (* (denom x) (numer y))))
 
-(define (=zero? x)
+(define (=zero? x) ; ex-2.80
   (= (numer x) 0))
 
 ;; interface to rest of the system
@@ -56,9 +56,9 @@
 (put 'make 'rational
      (lambda (n d) (tag (make-rat n d))))
 
-(put 'equ? '(rational rational) equ?)
+(put 'equ? '(rational rational) equ?) ; ex-2.79
 
-(put '=zero? '(rational) =zero?)
+(put '=zero? '(rational) =zero?) ; ex-2.80
 
 
 ;; testes
@@ -78,10 +78,10 @@
 (check-equal? (make-rat 2 3)
               (make-rat 2 3))
 
-(check-equal? (equ? (make-rat 2 3) (make-rat 2 3))
+(check-equal? (equ? (make-rat 2 3) (make-rat 2 3)) ; ex-2.79
               #t)
 
-(check-equal? (=zero? (make-rat 0 9))
+(check-equal? (=zero? (make-rat 0 9)) ; ex-2.80
               #t)
 
 

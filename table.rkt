@@ -2,8 +2,9 @@
 
 ;; https://docs.racket-lang.org/guide/hash-tables.html
 
+(require "tag-system.rkt")
 
-; --------------------------operations and types table---------------------------
+;;; Operations and types table
 
 (define table (make-hash))
 
@@ -28,7 +29,7 @@
 
 (provide put get show start)
 
-; --------------------------------coercion table---------------------------------
+;;; Coercion Table
 
 (define coercion-table (make-hash))
 
@@ -51,6 +52,17 @@
 (define (show-coercion)
   coercion-table)
 
-(provide put-coercion get-coercion start-coercion show-coercion)
+;;; Apply Generic
+
+(define (apply-generic op . args)
+  (let ((type-tags (map type-tag args)))
+    (let ((proc (get op type-tags)))
+      (if proc
+          (apply proc (map contents args))
+          (error
+           "No method for these types -- APPLY-GENERIC"
+           (list op type-tags))))))
+
+(provide apply-generic put-coercion get-coercion start-coercion show-coercion)
 
 
