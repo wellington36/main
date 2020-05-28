@@ -1,8 +1,6 @@
 #lang racket
 
-(require "table.rkt")
-(require "tag-system.rkt")
-(require "utils.rkt")
+(require "table.rkt" "tag-system.rkt" "utils.rkt")
 
 (define (real-part z)
   (car z))
