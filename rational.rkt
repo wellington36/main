@@ -64,6 +64,7 @@
 
 (put 'denom '(rational) denom)
 
+
 ;; testes
 
 (check-equal? (add-rat (make-rat 2 3) (make-rat 1 3))
