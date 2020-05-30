@@ -10,6 +10,7 @@
 (define (div x y) (apply-generic 'div x y))
 (define (equ? x y) (apply-generic 'equ? x y))
 (define (=zero? x) (apply-generic '=zero? x))
+(define (add-4 x y w z) (apply-generic 'add-4 x y w z)) ; ex-2.82
 
 ; testes
 
@@ -43,4 +44,7 @@
 (check-equal? (=zero? 0) #t) ; ex-2.79
 (check-equal? (=zero? (make-from-real-imag 3 -5)) #f) ; ex-2.80
 (check-equal? (=zero? (make-rational 3 5)) #f) ; ex-2.80
+
+(check-equal? (add-4 1 2 (make-rational 6 2) 4) ; ex-2.82
+	      10)
 

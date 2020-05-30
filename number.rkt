@@ -10,6 +10,8 @@
 (put 'sub    '(scheme-number scheme-number) -)
 (put 'mul    '(scheme-number scheme-number) *)
 (put 'div    '(scheme-number scheme-number) /)
+(put 'add-4 '(scheme-number scheme-number scheme-number scheme-number) ; ex-2.82
+     (lambda (x y w z) (+ x y w z)))
 (put 'equ?   '(scheme-number scheme-number) =) ; ex-2.79
 (put '=zero? '(scheme-number) =zero?) ; ex-2.80
 
