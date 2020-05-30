@@ -15,19 +15,33 @@
 - set! e begin exemplo balance. Mas withdraw não é uma função? Por
   que? Quais outras já vimos durante o curso?
 
-#+BEGIN_SRC racket
-(define balance 100)
-
-(define (withdraw amount)
-  (if (>= balance amount)
-      (begin (set! balance (- balance amount))
-             balance)
-      "Insufficient funds"))
-#+END_SRC
-
 - local state e encapsulated variable
 
+- formal parameters are already local
+
+- comportamento independente de dois objetos
+
+- what about the substitution model of evaluation (section 1.1.5)?
+
+- ex 3.1
+- ex 3.2
+- ex 3.3
+- ex 3.4
+
 #+BEGIN_SRC racket
+#lang racket
+
+;; (define balance 100)
+
+;; (define (withdraw amount)
+;;   (if (>= balance amount)
+;;       (begin (set! balance (- balance amount))
+;;              balance)
+;;       "Insufficient funds"))
+
+; (define square (lambda (n) (* n n)))
+; (define (square n) (* n n))
+
 (define new-withdraw
   (let ((balance 100))
     (lambda (amount)
@@ -36,14 +50,9 @@
                  balance)
           "Insufficient funds"))))
 
-(define w (new-withdraw))
-(w 100)
-(w 10)
-#+END_SRC
+(new-withdraw 10)
+(new-withdraw 10)
 
-- formal parameters are already local
-
-#+BEGIN_SRC racket
 (define (make-withdraw balance)
   (lambda (amount)
     (if (>= balance amount)
@@ -51,15 +60,16 @@
                balance)
         "Insufficient funds")))
 
-(define W1 (make-withdraw 100))
-(define W2 (make-withdraw 100))
-(W1 50)
-(W2 10)
-#+END_SRC
+(define w1 (make-withdraw 1000))
+(define w2 (make-withdraw 10))
 
-- comportamento independente de dois objetos
+(w1 100)
+(w2 5)
 
-#+BEGIN_SRC racket
+(w1 200)
+(w2 1)
+
+
 (define (make-account balance)
   (define (withdraw amount)
     (if (>= balance amount)
@@ -76,23 +86,12 @@
                        m))))
   dispatch)
 
-(define acc (make-account 100))
-((acc 'withdraw) 50)
-((acc 'withdraw) 60)
-;; "Insufficient funds"
+(define a1 (make-account 100))
+(define a2 (make-account 1000000000))
 
-((acc 'deposit) 40)
-((acc 'withdraw) 60)
-
-;; another obj
-(define acc2 (make-account 100))
+((a1 'withdraw) 100)
+((a2 'deposit) 10)
+((a1 'withdraw) 100)
+((a2 'deposit) 10)
 #+END_SRC
-
-- what about the substitution model of evaluation (section 1.1.5)?
-
-- ex 3.1
-- ex 3.2
-- ex 3.3
-- ex 3.4
-
 
