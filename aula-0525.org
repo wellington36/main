@@ -1,0 +1,29 @@
+#+Title: aula 25 de maio de 2020
+
+* revisão
+
+- dúvidas sobre Lista 4
+  - complexidade vs tempo
+
+- Ex 2.77
+- Ex 2.78
+- Ex 2.79
+- Ex 2.80
+
+* aula
+
+- motivação para `coerção` de tipos
+
+- coercion como lidar com mais de uma tabela? vide put-coercion
+
+- Although we still need to write coercion procedures to relate the
+  types (possibly n2 procedures for a system with n types)?
+
+- Even when neither of the objects to be combined can be converted to
+  the type of the other it may still be possible to perform the
+  operation by converting both objects to a third type.
+
+- uso da hierarquia, herança de operações. `raise` de tipos.
+
+- footnote 52
+

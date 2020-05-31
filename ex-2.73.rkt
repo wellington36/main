@@ -56,11 +56,7 @@
 (define (multiplicand p) (cadr p))
 
 
-<<<<<<< HEAD
-;; nova inprementação
-=======
 ;; nova implementação
->>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b
 
 ;; main code
 
@@ -131,12 +127,8 @@
 
 ; testes
 
-<<<<<<< HEAD
-(check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
-=======
 (check-equal? (deriv '(/ x 8) 'x)
               '(/ 8 64))
->>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b
 
 (check-equal? (deriv '(/ 8 x) 'x)
               '(/ -8 (* x x)))
@@ -145,12 +137,6 @@
               '(/ (- (* x x) (* (+ y x) (+ x x)))
                   (* (* x x) (* x x))))
 
-<<<<<<< HEAD
-
-;; item D
-
-; será nessesario alterar todos os put para que funcione.
-=======
 
 ;; item C (derivada de exponenciação)
 
@@ -178,6 +164,16 @@
 (put 'deriv '** deriv-exponentiation)
 
 
+;testes
+
+(check-equal? (deriv '(** x 0) 'x) '0)
+
+(check-equal? (deriv '(** x 7) 'x) '(* 7 (** x 6)))
+
+(check-equal? (deriv '(** (+ x 4) 5) 'x) '(* 5 (** (+ x 4) 4)))
+
+
+
 ; testes
 
 (check-equal? (deriv '(** x 0) 'x)
@@ -190,8 +186,8 @@
               '(* 5 (** (+ x 4) 4)))
 
 
+
 ;; item D
 
 ; será nessesario alterar todos os put para que funcione.
 
->>>>>>> d65f24b5b0d1d37189800e36a26d43208123536b

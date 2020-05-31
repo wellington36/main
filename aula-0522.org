@@ -1,0 +1,25 @@
+#+Title: aula 22 de maio de 2020
+
+- dúvidas sobre Lista 4?
+
+- pilhas (stack) e filas (queues). Vejam o arquivo
+  file:stack.rkt. Notem que nossa dificuldade era que a função remove
+  como discuti na aula teria que fazer duas coisas: 1) devolver o
+  elemento no topo da pilha e 2) modificar a pilha tirando este
+  elemento. Para evitar isso, quebrei a função em duas. Temos uma
+  função para pegar o topo e outra para modificar a pilha removendo o
+  elemento do topo. Com isso nossa implementação é 100% funcional.
+
+- Now we will see how to use this same idea not only to define
+  operations that are generic over different representations but also
+  to define operations that are generic over different kinds of
+  arguments.
+
+  - aritmética: complex, racionais, nat (ordinal)
+
+- https://www.twitch.tv/videos/627659597
+
+- Ex 2.77
+- Ex 2.78
+- Ex 2.79
+- Ex 2.80
