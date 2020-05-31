@@ -93,16 +93,3 @@
 (deriv '(* x y) 'x)
 (deriv '(* x y (+ x 3)) 'x)
 (deriv '(* x y (+ x (* 2 4 x) 3)) 'x)
-
-<<<<<<< HEAD
-(provide variable?
-         same-variable?
-         sum?
-         =number?
-         make-sum
-         product?
-         make-product)
-=======
-
-
->>>>>>> a3e29f2a193e71a558b71ab272a28229c56642da
