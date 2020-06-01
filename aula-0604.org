@@ -1,7 +1,5 @@
 #+Title: aula 04 de junho de 2020
 
-* aula
-
 - Exercicio 3.8
 
 - novo modelo de computação. Environments. Expressões só tem
