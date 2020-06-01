@@ -29,10 +29,11 @@
     (define (iter)
       (if (> counter n)
           product
-          (begin (set! product (* counter product))
-                 (set! counter (+ counter 1))
-                 (iter))))
+          (begin 
+            (set! product (* counter product))
+            (set! counter (+ counter 1))
+            (iter))))
     (iter)))
 
-(time (factorial-1 1000))
-(time (factorial-3 1000))
+(time (factorial-2 100))
+(time (factorial-3 100))

@@ -4,8 +4,6 @@
 
 - ex 3.1
 - ex 3.2
-- ex 3.3
-- ex 3.4
 
 * aula
 
@@ -17,6 +15,29 @@
   são apenas nomes, mas agora *places*.
 
 - equality
+
+  #+BEGIN_SRC racket
+    (define (make-decrementer balance)
+      (lambda (amount)
+	(- balance amount)))
+
+    (define D1 (make-decrementer 25))
+    (define D2 (make-decrementer 25))
+
+
+    (define (make-simplified-withdraw balance)
+      (lambda (amount)
+	(set! balance (- balance amount))
+	balance))
+
+    (define W1 (make-simplified-withdraw 25))
+    (define W2 (make-simplified-withdraw 25))
+
+
+    (W1 20)
+    (W1 20)
+    (W1 20)
+  #+END_SRC
 
   Are D1 and D2 the same? An acceptable answer is yes, because D1 and
   D2 have the same computational behavior -- each is a procedure that
@@ -51,10 +72,4 @@
 
 - exemplo file::factorial.rkt
 
-- Ex 3.8
-
-- novo modelo de computação. Environments. Expressões só tem
-  significado/valor em um ambiente.
-
-
-
+- novo modelo de computação: frames e environment
