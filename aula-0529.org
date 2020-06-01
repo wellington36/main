@@ -97,9 +97,6 @@
 
 * links para mais informações da documentação
 
-- set!
- https://docs.racket-lang.org/reference/set_.html#%28form._%28%28quote._~23~25kernel%29._set%21%29%29
-
-- begin
- https://docs.racket-lang.org/reference/begin.html
+- set! :: https://docs.racket-lang.org/reference/set_.html
+- begin :: https://docs.racket-lang.org/reference/begin.html
 
