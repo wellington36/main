@@ -1,0 +1,75 @@
+#+Title: aula 01 de junho de 2020
+
+* exercicios
+
+- ex 3.1
+- ex 3.2
+
+* aula
+
+- local state e encapsulated variable
+
+- vantagens: random
+
+- desvantagem: precisamos de novo modelo de computação! simbolos não
+  são apenas nomes, mas agora *places*.
+
+- equality
+
+  #+BEGIN_SRC racket
+    (define (make-decrementer balance)
+      (lambda (amount)
+	(- balance amount)))
+
+    (define D1 (make-decrementer 25))
+    (define D2 (make-decrementer 25))
+
+
+    (define (make-simplified-withdraw balance)
+      (lambda (amount)
+	(set! balance (- balance amount))
+	balance))
+
+    (define W1 (make-simplified-withdraw 25))
+    (define W2 (make-simplified-withdraw 25))
+
+
+    (W1 20)
+    (W1 20)
+    (W1 20)
+  #+END_SRC
+
+  Are D1 and D2 the same? An acceptable answer is yes, because D1 and
+  D2 have the same computational behavior -- each is a procedure that
+  subtracts its input from 25. In fact, D1 could be substituted for D2
+  in any computation without changing the result.
+
+  Even though W1 and W2 are ``equal'' in the sense that they are both
+  created by evaluating the same expression, (make-simplified-withdraw
+  25), it is not true that W1 could be substituted for W2 in any
+  expression without changing the result of evaluating the expression.
+
+  A language that supports the concept that ``equals can be
+  substituted for equals'' in an expresssion without changing the
+  value of the expression is said to be referentially transparent.
+
+  Consequently, reasoning about programs that use assignment becomes
+  drastically more difficult.
+
+- aliasing complexidade de reasoning sobre o programa
+
+- In general, so long as we never modify data objects, we can regard a
+  compound data object to be precisely the totality of its pieces. For
+  example, a rational number is determined by giving its numerator and
+  its denominator. But this view is no longer valid in the presence of
+  change, where a compound data object has an ``identity'' that is
+  something different from the pieces of which it is composed. A bank
+  account is still ``the same'' bank account even if we change the
+  balance by making a withdrawal; conversely, we could have two
+  different bank accounts with the same state information.
+
+- bank accounts vs rational numbers
+
+- exemplo file::factorial.rkt
+
+- novo modelo de computação: frames e environment

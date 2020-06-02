@@ -5,7 +5,6 @@
 - 2.82
 - 2.83
 - 2.84
-- 2.85
 
 * aula
 
@@ -25,8 +24,6 @@
 
 - ex 3.1
 - ex 3.2
-- ex 3.3
-- ex 3.4
 
 #+BEGIN_SRC racket
 #lang racket
@@ -94,4 +91,9 @@
 ((a1 'withdraw) 100)
 ((a2 'deposit) 10)
 #+END_SRC
+
+* links documentação
+
+- set! :: https://docs.racket-lang.org/reference/set_.html
+- begin :: https://docs.racket-lang.org/reference/begin.html
 

@@ -127,12 +127,8 @@
 
 ; testes
 
-
-(check-equal? (deriv '(/ x 8) 'x) '(/ 8 64))
-
 (check-equal? (deriv '(/ x 8) 'x)
               '(/ 8 64))
-
 
 (check-equal? (deriv '(/ 8 x) 'x)
               '(/ -8 (* x x)))
@@ -194,11 +190,6 @@
 ;; item D
 
 ; será nessesario alterar todos os put para que funcione.
-
-
-
-
-
 
 
 

@@ -1,0 +1,13 @@
+#+Title: aula 04 de junho de 2020
+
+- Exercicio 3.8
+
+- novo modelo de computação. Environments. Expressões só tem
+  significado/valor em um ambiente.
+
+- footnote 13?! In Racket?
+
+- Em Racket: "That is, one finds the first frame in the environment
+  that contains a binding for the variable and modifies that frame."?
+
+  
