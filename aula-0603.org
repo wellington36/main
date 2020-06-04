@@ -1,6 +1,8 @@
-#+Title: aula 04 de junho de 2020
+#+Title: aula 03 de junho de 2020
 
 - Exercicio 3.8
+
+- pergunta feita em aula?
 
 - novo modelo de computação. Environments. Expressões só tem
   significado/valor em um ambiente.
@@ -10,4 +12,11 @@
 - Em Racket: "That is, one finds the first frame in the environment
   that contains a binding for the variable and modifies that frame."?
 
+- como valores são retornados?
+
+- Ex 3.9
+
+- como memória é liberada?
+
+- 
   
