@@ -16,7 +16,18 @@
 
 - Ex 3.9
 
-- como memória é liberada?
+- como memória é liberada? 'coletor de lixo'
 
-- 
+- racket não faz verificação de tipos forte
+
+  #+BEGIN_SRC racket
+
+  (define (teste1 n) (* (teste n) (teste n))
+
+  -- nao gera erro
+  (define (teste m n) (+ m n))
+
+  -- nao gera erro
+  (define (teste m) "valor string")
   
+  #+END_SRC
