@@ -1,0 +1,17 @@
+#+Title: aula 05 de junho de 2020
+
+- https://cacm.acm.org/magazines/2012/1/144809-creating-languages-in-racket/fulltext
+
+- the SICP lang in Racket
+
+- set-car! and set-cdr!
+
+- mutable lists
+
+- Exercicios 3.12, 3.13 e 3.14
+
+- file::aula-0605.rkt
+
+- Exercícios para fazer 3.15 - 3.19. Para o 3.19 vale a leitura de
+  https://en.wikipedia.org/wiki/Cycle_detection
+
