@@ -92,7 +92,7 @@
 ((a2 'deposit) 10)
 #+END_SRC
 
-* links da documentação
+* links documentação
 
 - set! :: https://docs.racket-lang.org/reference/set_.html
 - begin :: https://docs.racket-lang.org/reference/begin.html
