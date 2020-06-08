@@ -5,7 +5,6 @@
 - 2.82
 - 2.83
 - 2.84
-- 2.85
 
 * aula
 
@@ -25,8 +24,6 @@
 
 - ex 3.1
 - ex 3.2
-- ex 3.3
-- ex 3.4
 
 #+BEGIN_SRC racket
 #lang racket
@@ -97,6 +94,6 @@
 
 * links da documentação
 
-- set! :: https://docs.racket-lang.org/reference/set_.html#%28form._%28%28quote._~23~25kernel%29._set%21%29%29
+- set! :: https://docs.racket-lang.org/reference/set_.html
 - begin :: https://docs.racket-lang.org/reference/begin.html
 
