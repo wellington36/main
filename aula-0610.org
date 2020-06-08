@@ -1,0 +1,14 @@
+#+Title: aula 10 de junho de 2020
+
+- queue = fila (FIFO)
+
+- filas como listas encadeadas (custo linear para inserir).
+
+- Figure 3.19
+
+- Exercise 3.21
+
+- Exercise 3.22
+
+- Exercise 3.23
+
