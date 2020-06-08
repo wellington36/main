@@ -1,4 +1,4 @@
-lang racket
+#lang racket
 
 (define (estimate-pi trials)
   (sqrt (/ 6 (monte-carlo trials cesaro-test))))
