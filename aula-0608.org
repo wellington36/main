@@ -1,0 +1,5 @@
+#+Title: aula 08 de junho de 2020
+
+- Exercícios para fazer 3.15 - 3.19. Para o 3.19 vale a leitura de
+  https://en.wikipedia.org/wiki/Cycle_detection
+
